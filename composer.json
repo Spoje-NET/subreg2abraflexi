@@ -1,0 +1,21 @@
+{
+    "name": "spojenet/subreg2abraflexi",
+    "description": "Import Subreg Pricelist into AbraFlexi",
+    "type": "project",
+    "require": {
+        "spojenet/subreg": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SpojeNet\\SubregAbraFlexi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "vitezslav.dvorak@spojenet.cz"
+        }
+    ],
+    "minimum-stability": "dev"
+}
