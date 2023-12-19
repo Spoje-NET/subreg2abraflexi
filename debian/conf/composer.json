@@ -13,8 +13,8 @@
         "vendor-dir": "/var/lib/subreg2abraflexi"
     },
     "require": {
-        "deb/php-abraflexi": "*",
-        "deb/php-subreg": "*"
+        "deb/abraflexi": "*",
+        "deb/subreg": "*"
     },
     "autoload": {
         "psr-4": {
