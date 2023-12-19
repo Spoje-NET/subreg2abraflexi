@@ -1,38 +1,38 @@
 {
-    "name": "deb/subreg2abraflexi",
-    "description": "Import Subreg Pricelist into AbraFlexi",
-    "type": "project",
-    "version": "0.8",
-    "authors": [
-        {
-            "name": "Vítězslav Dvořák",
-            "email": "info@vitexsoftware.cz"
-        }
-    ],
-    "config": {
-        "vendor-dir": "/var/lib/subreg2abraflexi"
+  "name": "deb/subreg2abraflexi",
+  "description": "Import Subreg Pricelist into AbraFlexi",
+  "type": "project",
+  "version": "2.8",
+  "authors": [
+    {
+      "name": "Vítězslav Dvořák",
+      "email": "info@vitexsoftware.cz"
+    }
+  ],
+  "config": {
+    "vendor-dir": "/var/lib/subreg2abraflexi"
+  },
+  "require": {
+    "deb/abraflexi": "*",
+    "deb/subreg": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SpojeNet\\SubregAbraFlexi\\": "SubregAbraFlexi"
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/usr/share/php/EaseCore"
     },
-    "require": {
-        "deb/abraflexi": "*",
-        "deb/subreg": "*"
+    {
+      "type": "path",
+      "url": "/usr/share/php/Subreg"
     },
-    "autoload": {
-        "psr-4": {
-            "SpojeNet\\SubregAbraFlexi\\": "SubregAbraFlexi"
-        }
-    },    
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/usr/share/php/EaseCore"
-        },
-        {
-            "type": "path",
-            "url": "/usr/share/php/Subreg"
-        },
-        {
-            "type": "path",
-            "url": "/usr/share/php/AbraFlexi"
-        }
-    ]
+    {
+      "type": "path",
+      "url": "/usr/share/php/AbraFlexi"
+    }
+  ]
 }

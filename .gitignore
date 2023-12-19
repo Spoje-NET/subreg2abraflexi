@@ -13,3 +13,6 @@ composer.phar
 /debian/subreg2abraflexi.debhelper.log
 /debian/debhelper-build-stamp
 /debian/files
+/debian/multiflexi-subreg2abraflexi/
+/debian/multiflexi-subreg2abraflexi.debhelper.log
+/debian/multiflexi-subreg2abraflexi.substvars

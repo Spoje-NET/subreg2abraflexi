@@ -350,12 +350,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-subreg.git",
-                "reference": "14ea67f9c302fc19f8ef23017fc0d41009634127"
+                "reference": "bfb8ff057c395bd6d46858890e9bd7fd68e11a99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/14ea67f9c302fc19f8ef23017fc0d41009634127",
-                "reference": "14ea67f9c302fc19f8ef23017fc0d41009634127",
+                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/bfb8ff057c395bd6d46858890e9bd7fd68e11a99",
+                "reference": "bfb8ff057c395bd6d46858890e9bd7fd68e11a99",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +387,7 @@
                 "issues": "https://github.com/Spoje-NET/php-subreg/issues",
                 "source": "https://github.com/Spoje-NET/php-subreg/tree/main"
             },
-            "time": "2023-12-19T13:03:29+00:00"
+            "time": "2023-12-19T15:23:27+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
