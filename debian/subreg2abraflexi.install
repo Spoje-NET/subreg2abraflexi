@@ -1,0 +1,5 @@
+debian/conf/composer.json       usr/lib/subreg2abraflexi/
+src/*			        usr/lib/subreg2abraflexi/
+src/AbraFlexi/Matcher/*         usr/lib/subreg2abraflexi/Matcher/
+bin/*                           usr/bin/
+.env.example                    usr/share/doc/abraflexi-matcher

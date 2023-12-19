@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc9df37f3d5157fc63f65db37f1ad2bb",
+    "content-hash": "9624f36eda3058cb58d12038befc07d7",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -287,22 +287,80 @@
             "time": "2022-03-27T11:31:16+00:00"
         },
         {
-            "name": "spoje.net/subreg",
-            "version": "dev-core-based",
+            "name": "spojenet/flexibee",
+            "version": "2.24",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Spoje-NET/php-subreg.git",
-                "reference": "4e4c83ffc3150784ac2d4b2582c535dc1da86162"
+                "url": "https://github.com/Spoje-NET/php-abraflexi.git",
+                "reference": "2fec47736dcaf1ad5b32490e8071af465895f01a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/4e4c83ffc3150784ac2d4b2582c535dc1da86162",
-                "reference": "4e4c83ffc3150784ac2d4b2582c535dc1da86162",
+                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/2fec47736dcaf1ad5b32490e8071af465895f01a",
+                "reference": "2fec47736dcaf1ad5b32490e8071af465895f01a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-gettext": "*",
+                "ext-json": "*",
+                "vitexsoftware/ease-core": ">=1.12"
+            },
+            "replace": {
+                "spoje.net/flexibee": "*",
+                "spoje.net/flexipeehp": "*"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "phing/phing": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AbraFlexi\\": "src/AbraFlexi/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vítězslav Dvořák",
+                    "email": "vitex@arachne.cz"
+                }
+            ],
+            "description": "Library for easy interaction with czech accounting system FlexiBee.",
+            "keywords": [
+                "API-Client",
+                "AbraFlexi",
+                "fintech",
+                "flexibee"
+            ],
+            "support": {
+                "issues": "https://github.com/Spoje-NET/php-abraflexi/issues",
+                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/2.24"
+            },
+            "time": "2023-06-04T07:19:05+00:00"
+        },
+        {
+            "name": "spojenet/subreg",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Spoje-NET/php-subreg.git",
+                "reference": "14ea67f9c302fc19f8ef23017fc0d41009634127"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/14ea67f9c302fc19f8ef23017fc0d41009634127",
+                "reference": "14ea67f9c302fc19f8ef23017fc0d41009634127",
                 "shasum": ""
             },
             "require": {
                 "ext-soap": "*",
-                "vitexsoftware/ease-core": ">=1.12"
+                "vitexsoftware/ease-core": ">=1.41"
             },
             "require-dev": {
                 "phpunit/phpunit": ">=9"
@@ -327,9 +385,9 @@
             "description": "PHP Based Library for easy interaction with soap.subreg.cz",
             "support": {
                 "issues": "https://github.com/Spoje-NET/php-subreg/issues",
-                "source": "https://github.com/Spoje-NET/php-subreg/tree/core-based"
+                "source": "https://github.com/Spoje-NET/php-subreg/tree/main"
             },
-            "time": "2023-11-20T12:52:05+00:00"
+            "time": "2023-12-19T13:03:29+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -398,7 +456,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spoje.net/subreg": 20
+        "spojenet/subreg": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

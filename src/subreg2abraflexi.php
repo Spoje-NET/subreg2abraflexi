@@ -10,7 +10,6 @@ require_once '../vendor/autoload.php';
             'ABRAFLEXI_LOGIN',
             'ABRAFLEXI_PASSWORD',
             'ABRAFLEXI_COMPANY',
-            'ABRAFLEXI_STORAGE',
             'SUBREG_LOCATION',
             'SUBREG_URI',
             'SUBREG_LOGIN',
@@ -20,8 +19,4 @@ require_once '../vendor/autoload.php';
 );
 
 $syncer = new SubregAbraFlexi\SubregPricelist();
-try {
-    $syncer->import();
-} catch (\SoapFault $exc) {
-    echo $exc->getTraceAsString();
-}
+$syncer->import();

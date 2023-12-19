@@ -1,0 +1,41 @@
+{
+    "name": "deb/subreg2abraflexi",
+    "description": "Import Subreg Pricelist into AbraFlexi",
+    "type": "project",
+    "version": "0.8",
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "config": {
+        "vendor-dir": "/var/lib/subreg2abraflexi"
+    },
+    "require": {
+        "deb/php-abraflexi": "*",
+        "deb/php-subreg": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SpojeNet\\SubregAbraFlexi\\": "src/SpojeNet/SubregAbraFlexi"
+
+            "AbraFlexi\\Matcher\\": "AbraFlexi/Matcher/",
+            "AbraFlexi\\Matcher\\Ui\\": "AbraFlexi/Matcher/Ui/"
+        }
+    },    
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/usr/share/php/EaseCore"
+        },
+        {
+            "type": "path",
+            "url": "/usr/share/php/Subreg"
+        },
+        {
+            "type": "path",
+            "url": "/usr/share/php/AbraFlexi"
+        }
+    ]
+}

@@ -3,12 +3,13 @@
     "description": "Import Subreg Pricelist into AbraFlexi",
     "type": "project",
     "require": {
-        "spojenet/subreg": "*"
+        "spojenet/subreg": "dev-main",
+        "spojenet/flexibee": "2.24"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "SpojeNet\\SubregAbraFlexi\\": "src/"
+            "SpojeNet\\SubregAbraFlexi\\": "src/SpojeNet/SubregAbraFlexi"
         }
     },
     "authors": [

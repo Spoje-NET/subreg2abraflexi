@@ -1,0 +1,10 @@
+#!/bin/sh
+# postinst script for subreg2abraflexi
+set -e
+
+. /usr/share/debconf/confmodule
+
+for file in `ls /usr/lib/subreg2abraflexi/multiflexi/*.json`
+do
+	multiflexi-json2app $file
+done

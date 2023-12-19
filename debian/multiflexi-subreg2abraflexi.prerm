@@ -1,0 +1,10 @@
+#!/bin/sh
+# prerm script for subreg2abraflexi
+set -e
+
+. /usr/share/debconf/confmodule
+
+for file in `ls /usr/lib/subreg2abraflexi/multiflexi/*.json`
+do
+	multiflexi-json-app-remover $file
+done

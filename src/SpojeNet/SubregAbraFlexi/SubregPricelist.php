@@ -18,16 +18,16 @@ class SubregPricelist extends \AbraFlexi\Cenik
     public function import()
     {
         $config = [
-            "location" => constant('SUBREG_LOCATION'),
-            "uri" => constant('SUBREG_URI'),
-            "login" => constant('SUBREG_LOGIN'),
-            "password" => constant('SUBREG_PASSWORD')
+            "location" => \Ease\Shared::cfg('SUBREG_LOCATION'),
+            "uri" => \Ease\Shared::cfg('SUBREG_URI'),
+            "login" => \Ease\Shared::cfg('SUBREG_LOGIN'),
+            "password" => \Ease\Shared::cfg('SUBREG_PASSWORD')
         ];
 
         $countries = $this->getCountries();
 
         $subreger = new \Subreg\Client($config);
-
+        $subreger->login();
         $domainsToProcess = $subreger->pricelist();
         $position = 0;
         foreach ($domainsToProcess as $domain => $domainInfo) {
