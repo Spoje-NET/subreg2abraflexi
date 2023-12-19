@@ -7,3 +7,9 @@ composer.phar
 /nbproject/private/
 /.env
 /nbproject/
+/debian/subreg2abraflexi/
+/debian/.debhelper/
+/debian/subreg2abraflexi.substvars
+/debian/subreg2abraflexi.debhelper.log
+/debian/debhelper-build-stamp
+/debian/files
