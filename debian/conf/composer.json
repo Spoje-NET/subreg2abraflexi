@@ -18,10 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SpojeNet\\SubregAbraFlexi\\": "src/SpojeNet/SubregAbraFlexi"
-
-            "AbraFlexi\\Matcher\\": "AbraFlexi/Matcher/",
-            "AbraFlexi\\Matcher\\Ui\\": "AbraFlexi/Matcher/Ui/"
+            "SpojeNet\\SubregAbraFlexi\\": "SubregAbraFlexi"
         }
     },    
     "repositories": [
