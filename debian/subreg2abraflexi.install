@@ -3,3 +3,5 @@ src/*			        usr/lib/subreg2abraflexi/
 src/SpojeNet/SubregAbraFlexi/*  usr/lib/subreg2abraflexi/SubregAbraFlexi/
 bin/*                           usr/bin/
 .env.example                    usr/share/doc/abraflexi-matcher
+io.github.spoje_net.subreg_to_abraflexi.metainfo.xml /usr/share/metainfo/
+subreg2abraflexi.svg            /usr/share/icons/hicolor/scalable/apps/

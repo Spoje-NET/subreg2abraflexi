@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.spoje_net.subreg_to_abraflexi</id>
+  
+  <name>Subreg to AbraFlexi</name>
+  <summary>Import Subreg Pricelist into AbraFlexi</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      Import Subreg provided domain prices into AbraFlexi pricelist
+    </p>
+  </description>
+  
+  <icon type="stock">subreg2abraflexi</icon>
+  
+  <categories>
+    <category>Utility</category>
+    <category>Adult</category>
+  </categories>
+  
+  <provides>
+    <binary>subreg2abraflexi</binary>
+  </provides>
+</component>
+
