@@ -19,7 +19,7 @@ ABRAFLEXI_URL=https://demo.flexibee.eu:5434
 ABRAFLEXI_LOGIN=winstrom
 ABRAFLEXI_PASSWORD=winstrom
 ABRAFLEXI_COMPANY=demo_de
-
+ABRAFLEXI_GRANSY_CODE=GRANSY
 ```
 
 Run In Container

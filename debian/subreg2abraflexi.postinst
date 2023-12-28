@@ -1,9 +1,10 @@
 #!/bin/sh
 set -e
 
+composer-debian subreg2abraflexi
+
 case "$1" in
     configure)
-	composer-debian subreg2abraflexi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
