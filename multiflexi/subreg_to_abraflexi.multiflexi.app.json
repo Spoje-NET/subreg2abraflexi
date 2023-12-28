@@ -8,6 +8,7 @@
   "deploy": "apt install subreg2abraflexi",
   "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
   "requirements": "AbraFlexi",
+  "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
   "environment": {
     "ABRAFLEXI_COMPANY": {
       "type": "string",

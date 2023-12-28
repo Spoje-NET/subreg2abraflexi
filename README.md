@@ -21,3 +21,16 @@ ABRAFLEXI_PASSWORD=winstrom
 ABRAFLEXI_COMPANY=demo_de
 
 ```
+
+Run In Container
+----------------
+
+https://hub.docker.com/repository/docker/vitexsoftware/subreg2abraflexi
+
+```shell
+docker run --env-file .env vitexsoftware/subreg2abraflexi:latest
+```
+
+```shell
+podman run --env-file .env docker.io/vitexsoftware/subreg2abraflexi:latest
+```
