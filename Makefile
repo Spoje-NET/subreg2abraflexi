@@ -1,3 +1,5 @@
+all:
+
 buildimage:
 	docker build -f Containerfile -t vitexsoftware/subreg2abraflexi:latest .
 
