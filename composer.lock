@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9624f36eda3058cb58d12038befc07d7",
+    "content-hash": "1622b0b48a47b79c03dd1e523ace64bc",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -288,33 +288,30 @@
         },
         {
             "name": "spojenet/flexibee",
-            "version": "2.24",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-abraflexi.git",
-                "reference": "2fec47736dcaf1ad5b32490e8071af465895f01a"
+                "reference": "765cad4761fe266df8d4d33aea3211db5c70f4b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/2fec47736dcaf1ad5b32490e8071af465895f01a",
-                "reference": "2fec47736dcaf1ad5b32490e8071af465895f01a",
+                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/765cad4761fe266df8d4d33aea3211db5c70f4b5",
+                "reference": "765cad4761fe266df8d4d33aea3211db5c70f4b5",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-gettext": "*",
                 "ext-json": "*",
-                "vitexsoftware/ease-core": ">=1.12"
-            },
-            "replace": {
-                "spoje.net/flexibee": "*",
-                "spoje.net/flexipeehp": "*"
+                "vitexsoftware/ease-core": ">=1.41"
             },
             "require-dev": {
                 "ext-iconv": "*",
                 "phing/phing": "*",
                 "phpunit/phpunit": "*"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -328,10 +325,10 @@
             "authors": [
                 {
                     "name": "Vítězslav Dvořák",
-                    "email": "vitex@arachne.cz"
+                    "email": "info@vitexsoftware.cz"
                 }
             ],
-            "description": "Library for easy interaction with czech accounting system FlexiBee.",
+            "description": "Library for easy interaction with czech economic system AbraFlexi.",
             "keywords": [
                 "API-Client",
                 "AbraFlexi",
@@ -340,9 +337,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Spoje-NET/php-abraflexi/issues",
-                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/2.24"
+                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/main"
             },
-            "time": "2023-06-04T07:19:05+00:00"
+            "time": "2023-12-28T09:37:20+00:00"
         },
         {
             "name": "spojenet/subreg",
@@ -456,7 +453,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spojenet/subreg": 20
+        "spojenet/subreg": 20,
+        "spojenet/flexibee": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

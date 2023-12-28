@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "spojenet/subreg": "dev-main",
-        "spojenet/flexibee": "2.24"
+        "spojenet/flexibee": "dev-main"
     },
     "license": "MIT",
     "autoload": {
