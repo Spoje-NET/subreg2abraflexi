@@ -15,5 +15,7 @@ require_once '../vendor/autoload.php';
 );
 
 $engine = new \AbraFlexi\RW(null, ['evidence' => 'merna-jednotka']);
-$engine->logBanner(\Ease\Shared::getAppName() . ' ' . \Ease\Shared::getAppVersion());
-$engine->insertToAbraFlexi(['kod' => 'ROK', 'typMjK' => 'typMj.cas', 'kodTisk' => 'rok', 'kodTiskA' => 'yr', 'nazev' => 'Rok']);
+$engine->logBanner();
+if (!$engine->recordExists('code:ROK')) {
+    $engine->insertToAbraFlexi(['kod' => 'ROK', 'typMjK' => 'typMj.cas', 'kodTisk' => 'rok', 'kodTiskA' => 'yr', 'nazev' => 'Rok']);
+}
