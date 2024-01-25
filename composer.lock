@@ -63,12 +63,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail.git",
-                "reference": "4fda3292ac6bf226d8841cfd8ee3cf4e28395c01"
+                "reference": "eb053f8b74f4f3178105fcf001626e63068c0dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail/zipball/4fda3292ac6bf226d8841cfd8ee3cf4e28395c01",
-                "reference": "4fda3292ac6bf226d8841cfd8ee3cf4e28395c01",
+                "url": "https://api.github.com/repos/pear/Mail/zipball/eb053f8b74f4f3178105fcf001626e63068c0dbc",
+                "reference": "eb053f8b74f4f3178105fcf001626e63068c0dbc",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +123,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail",
                 "source": "https://github.com/pear/Mail"
             },
-            "time": "2023-11-01T21:31:59+00:00"
+            "time": "2024-01-15T21:56:23+00:00"
         },
         {
             "name": "pear/mail_mime",
@@ -131,12 +131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail_Mime.git",
-                "reference": "895f9bea89417e963f321d2f27189d2ccd40592d"
+                "reference": "fb8f9c4b9f817e402b5cea55af2a92d17f82ee15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/895f9bea89417e963f321d2f27189d2ccd40592d",
-                "reference": "895f9bea89417e963f321d2f27189d2ccd40592d",
+                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/fb8f9c4b9f817e402b5cea55af2a92d17f82ee15",
+                "reference": "fb8f9c4b9f817e402b5cea55af2a92d17f82ee15",
                 "shasum": ""
             },
             "require": {
@@ -175,7 +175,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail_Mime",
                 "source": "https://github.com/pear/Mail_Mime"
             },
-            "time": "2023-12-10T12:44:33+00:00"
+            "time": "2024-01-19T13:24:42+00:00"
         },
         {
             "name": "pear/pear-core-minimal",
@@ -292,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-abraflexi.git",
-                "reference": "765cad4761fe266df8d4d33aea3211db5c70f4b5"
+                "reference": "4f67cda1964b76d1f401053e6e6c41366f5d004d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/765cad4761fe266df8d4d33aea3211db5c70f4b5",
-                "reference": "765cad4761fe266df8d4d33aea3211db5c70f4b5",
+                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/4f67cda1964b76d1f401053e6e6c41366f5d004d",
+                "reference": "4f67cda1964b76d1f401053e6e6c41366f5d004d",
                 "shasum": ""
             },
             "require": {
@@ -339,7 +339,7 @@
                 "issues": "https://github.com/Spoje-NET/php-abraflexi/issues",
                 "source": "https://github.com/Spoje-NET/php-abraflexi/tree/main"
             },
-            "time": "2023-12-28T09:37:20+00:00"
+            "time": "2024-01-17T22:55:19+00:00"
         },
         {
             "name": "spojenet/subreg",
@@ -347,12 +347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-subreg.git",
-                "reference": "bfb8ff057c395bd6d46858890e9bd7fd68e11a99"
+                "reference": "10be4d0279958f1f396bc4c400ce141909c3c5a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/bfb8ff057c395bd6d46858890e9bd7fd68e11a99",
-                "reference": "bfb8ff057c395bd6d46858890e9bd7fd68e11a99",
+                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/10be4d0279958f1f396bc4c400ce141909c3c5a8",
+                "reference": "10be4d0279958f1f396bc4c400ce141909c3c5a8",
                 "shasum": ""
             },
             "require": {
@@ -384,7 +384,7 @@
                 "issues": "https://github.com/Spoje-NET/php-subreg/issues",
                 "source": "https://github.com/Spoje-NET/php-subreg/tree/main"
             },
-            "time": "2023-12-19T15:23:27+00:00"
+            "time": "2024-01-25T19:24:55+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -392,12 +392,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/php-ease-core.git",
-                "reference": "302227dfaec6cb7fe4ff129d0be65c1d95366558"
+                "reference": "27d41960272383ea05e23d9af0f9145ac81e407d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/302227dfaec6cb7fe4ff129d0be65c1d95366558",
-                "reference": "302227dfaec6cb7fe4ff129d0be65c1d95366558",
+                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/27d41960272383ea05e23d9af0f9145ac81e407d",
+                "reference": "27d41960272383ea05e23d9af0f9145ac81e407d",
                 "shasum": ""
             },
             "require": {
@@ -446,7 +446,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-12-13T17:28:33+00:00"
+            "time": "2024-01-23T22:52:40+00:00"
         }
     ],
     "packages-dev": [],
