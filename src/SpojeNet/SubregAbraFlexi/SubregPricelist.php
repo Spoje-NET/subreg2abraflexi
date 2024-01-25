@@ -22,7 +22,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
      *
      * @var array
      */
-    private $countries;
+    //private $countries;
 
     /**
      * @inheritDoc
@@ -47,6 +47,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
 
         $position = 0;
         foreach ($domainsToProcess as $domain => $domainInfo) {
+            $synced = false;
             if (array_key_exists('prices', $domainInfo)) {
                 $domainInfo['name'] = $domain;
                 $prices = $domainInfo['prices'];
@@ -84,13 +85,21 @@ class SubregPricelist extends \AbraFlexi\Cenik
                     }
                 }
 
-                $this->addStatusMessage($domain . ': ' . (++$position) . '/' . count($domainsToProcess) . ' code:' . $this->getRecordCode(), ($synced ? 'success' : 'error'));
+                $this->addStatusMessage($domain . ': ' . (++$position) . '/' . count($domainsToProcess) . ' ' . $this->getRecordCode(), ($synced ? 'success' : 'error'));
             } else {
                 $this->addStatusMessage($domain . ': ' . _('No prices provided ?!?'), 'warning');
             }
         }
     }
 
+    /**
+     * Save Domain into AbraFlexi Pricelist
+     *
+     * @param string $type
+     * @param array  $domainInfo
+     *
+     * @return boolean
+     */
     public function saveDomain($type, $domainInfo)
     {
         $domain = idn_to_utf8($domainInfo['name'], IDNA_DEFAULT, INTL_IDNA_VARIANT_UTS46);
@@ -146,7 +155,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
             'nakupCena' => $this->getDataValue('nakupCena'),
                 ], ['evidence' => 'dodavatel']);
 
-        if ($supplier->recordExists(['firma' => 'code:GRANSY', 'kodIndi' => $this->getDataValue('kod')])) {
+        if ($supplier->recordExists(['firma' => 'code:' . \Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'), 'kodIndi' => $this->getDataValue('kod')])) {
             $supplier->insertToAbraFlexi(['id' => $supplier->lastResult['dodavatel'][0]['id'],
                 'nakupCena' => $this->getDataValue('nakupCena')]);
             $restult = true;
@@ -165,7 +174,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
     public function addFlag($code)
     {
         $flagFile = 'images/country-flags/png250px/' . $code . '.png';
-
+        $result = 0;
         if (!file_exists($flagFile)) {
             $flagFile = '../' . $flagFile;
         }

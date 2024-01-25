@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1622b0b48a47b79c03dd1e523ace64bc",
+    "content-hash": "459d3c7fe132db4037edda218f8cd989",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -453,6 +453,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "vitexsoftware/ease-core": 20,
         "spojenet/subreg": 20,
         "spojenet/flexibee": 20
     },

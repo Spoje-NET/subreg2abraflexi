@@ -3,6 +3,7 @@
     "description": "Import Subreg Pricelist into AbraFlexi",
     "type": "project",
     "require": {
+        "vitexsoftware/ease-core": "dev-main",
         "spojenet/subreg": "dev-main",
         "spojenet/flexibee": "dev-main"
     },
