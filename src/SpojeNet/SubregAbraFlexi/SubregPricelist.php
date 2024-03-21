@@ -40,6 +40,9 @@ class SubregPricelist extends \AbraFlexi\Cenik
         //$this->countries = $this->getCountries();
     }
 
+    /**
+     * Main Import Loop
+     */
     public function import()
     {
         $this->subreg->login();
@@ -58,7 +61,12 @@ class SubregPricelist extends \AbraFlexi\Cenik
                         switch ($priceType) {
                             case 'renew':
                             case 'register':
-                                $synced = $this->saveDomain($priceType, $domainInfo);
+                                try {
+                                    $synced = $this->saveDomain($priceType, $domainInfo);
+                                } catch (\AbraFlexi\Exception $exc) {
+                                    echo $exc->getTraceAsString();
+                                    $this->addStatusMessage('Error importing domain: ' . $domain, 'error');
+                                }
                                 break;
                             case "ea1":
                             case "ea2":
