@@ -1,9 +1,10 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Subreg2AbraFlexi - AbraFlexi Customers handler class.
+ *
+ * @author Vítězslav Dvořák <vitezslav.dvorak@spojenet.cz>
+ * @copyright  2020-2024 SpojeNet s.r.o.
  */
 
 namespace SpojeNet\SubregAbraFlexi;
@@ -15,14 +16,17 @@ namespace SpojeNet\SubregAbraFlexi;
  */
 class SubregPricelist extends \AbraFlexi\Cenik
 {
-    private $config;
-    private $subreg;
-
     /**
      *
      * @var array
      */
-    //private $countries;
+    private $config;
+
+    /**
+     *
+     * @var \Subreg\Client
+     */
+    private $subreg;
 
     /**
      * @inheritDoc
@@ -152,6 +156,11 @@ class SubregPricelist extends \AbraFlexi\Cenik
         return $this->sync() && $this->saveDomainPrice();
     }
 
+    /**
+     * Save Current domain's price
+     *
+     * @return bool
+     */
     public function saveDomainPrice()
     {
         $restult = false;
@@ -179,6 +188,13 @@ class SubregPricelist extends \AbraFlexi\Cenik
         return $restult;
     }
 
+    /**
+     * Add Country Flag as image to AbraFlexi
+     *
+     * @param string $code
+     *
+     * @return boolean
+     */
     public function addFlag($code)
     {
         $flagFile = 'images/country-flags/png250px/' . $code . '.png';
@@ -200,6 +216,11 @@ class SubregPricelist extends \AbraFlexi\Cenik
         return ($result == 200);
     }
 
+    /**
+     * Return list of countries known to AbraFlexi
+     *
+     * @return array
+     */
     function getCountries()
     {
         $countries = [];

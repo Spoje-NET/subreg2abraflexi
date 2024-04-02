@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 /**
+ * Subreg2AbraFlexi - AbraFlexi Customers handler class.
  *
- *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2024 Spoje.Net s.r.o.
+ * @author Vítězslav Dvořák <vitezslav.dvorak@spojenet.cz>
+ * @copyright  2020-2024 SpojeNet s.r.o.
  */
+
+declare(strict_types=1);
 
 namespace SpojeNet\SubregAbraFlexi;
 

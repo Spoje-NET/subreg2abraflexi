@@ -1,4 +1,4 @@
-subreg2abraflexi (0.2.0) UNRELEASED; urgency=low
+subreg2abraflexi (0.1.0) UNRELEASED; urgency=low
 
   [ Vítězslav Dvořák ]
   * Initial release. Closes: #nnnn
@@ -13,4 +13,4 @@ subreg2abraflexi (0.2.0) UNRELEASED; urgency=low
   [  ]
   * Register & Renew prices handled
 
- --  <vitezslav.dvorak@spojenet.cz>  Thu, 28 Dec 2023 12:11:43 +0100
+ --  <vitezslav.dvorak@spojenet.cz>  Thu, 21 Mar 2024 17:29:22 +0100

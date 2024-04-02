@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Subreg2AbraFlexi - Shared Init.
+ *
+ * @author Vítězslav Dvořák <vitezslav.dvorak@spojenet.cz>
+ * @copyright  2020-2024 SpojeNet s.r.o.
+ */
+
 namespace SpojeNet;
 
 define('APP_NAME', 'Subreg2AbraFlexi Init');
