@@ -127,14 +127,14 @@ class SubregPricelist extends \AbraFlexi\Cenik
 
         $this->dataReset();
         $this->setDataValue('id', 'ext:subreg:' . $domainInfo['name'] . $itemType);
-//            $asciiDomain = iconv('UTF-8', 'ASCII//IGNORE', $domain);
-//            if(($asciiDomain != $domain) && $this->recordExists(\AbraFlexi\Functions::code($asciiDomain))){
-//                $this->addStatusMessage('Old Domain Code '. \AbraFlexi\Functions::code($asciiDomain) . ' Removal', $this->deleteFromAbraFlexi() ? 'success' : 'warning');
-//            }
-//            if ($asciiDomain != $domain) {
+        //            $asciiDomain = iconv('UTF-8', 'ASCII//IGNORE', $domain);
+        //            if(($asciiDomain != $domain) && $this->recordExists(\AbraFlexi\Functions::code($asciiDomain))){
+        //                $this->addStatusMessage('Old Domain Code '. \AbraFlexi\Functions::code($asciiDomain) . ' Removal', $this->deleteFromAbraFlexi() ? 'success' : 'warning');
+        //            }
+        //            if ($asciiDomain != $domain) {
         $this->setDataValue('kod', 'DOMENA' . $domainInfo['name'] . $itemType);
-//            } else {
-//            }
+        //            } else {
+        //            }
 
         $this->setDataValue('nazev', '*.' . $domain . ' ' . str_replace('_', '', $itemType));
         $this->setDataValue(
@@ -142,15 +142,15 @@ class SubregPricelist extends \AbraFlexi\Cenik
             str_replace('_', '', $itemType) . ' Doména ' . $domainInfo['country'] . ' (' . $domainInfo['continent'] . ')'
         );
         $this->setDataValue('nakupCena', $price);
-//            $this->setDataValue('cenaZakl', $price);
+        //            $this->setDataValue('cenaZakl', $price);
         $this->setDataValue('mj1', 'code:ROK');
 
-//        if (array_key_exists($domainInfo['country'], $this->countries)) {
-//            $this->setDataValue('stat', $this->countries[$domainInfo['country']]);
-//            $ccode = strtolower(\AbraFlexi\RO::uncode($this->countries[$domainInfo['country']]));
-//        } else {
-//            $ccode = false;
-//        }
+        //        if (array_key_exists($domainInfo['country'], $this->countries)) {
+        //            $this->setDataValue('stat', $this->countries[$domainInfo['country']]);
+        //            $ccode = strtolower(\AbraFlexi\RO::uncode($this->countries[$domainInfo['country']]));
+        //        } else {
+        //            $ccode = false;
+        //        }
         //$this->setDataValue('skupZboz','code:DOMENY');
 
         return $this->sync() && $this->saveDomainPrice();
@@ -221,7 +221,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
      *
      * @return array
      */
-    function getCountries()
+    public function getCountries()
     {
         $countries = [];
         $contryer = new \AbraFlexi\RO(null, ['evidence' => 'stat']);
