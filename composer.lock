@@ -2180,12 +2180,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "3a8f1b3750fb30a17813c7c01dd7404355a138ff"
+                "reference": "0bcc20b303444f66435ef0d14f5c117075ab3b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3a8f1b3750fb30a17813c7c01dd7404355a138ff",
-                "reference": "3a8f1b3750fb30a17813c7c01dd7404355a138ff",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0bcc20b303444f66435ef0d14f5c117075ab3b06",
+                "reference": "0bcc20b303444f66435ef0d14f5c117075ab3b06",
                 "shasum": ""
             },
             "require": {
@@ -2231,7 +2231,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-08T14:52:24+00:00"
+            "time": "2025-01-10T12:31:21+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
@@ -4279,16 +4279,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "28d6a7c0d8389c1d1b8b6ade38c79a50754313b9"
+                "reference": "100dd9ca58aaef09235be9d0da15fd89259f654e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/28d6a7c0d8389c1d1b8b6ade38c79a50754313b9",
-                "reference": "28d6a7c0d8389c1d1b8b6ade38c79a50754313b9",
+                "url": "https://api.github.com/repos/symfony/console/zipball/100dd9ca58aaef09235be9d0da15fd89259f654e",
+                "reference": "100dd9ca58aaef09235be9d0da15fd89259f654e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/service-contracts": "^2.5|^3",
                 "symfony/string": "^6.4|^7.0"
@@ -4364,7 +4365,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-14T16:08:18+00:00"
+            "time": "2025-01-10T12:33:53+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

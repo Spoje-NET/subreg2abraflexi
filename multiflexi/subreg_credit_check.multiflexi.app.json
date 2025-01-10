@@ -65,8 +65,31 @@
             "description": "Gransy Code in AbraFlexi Addressbook",
             "defval": "GRANSY",
             "required": false
+        },
+        "APP_DEBUG": {
+            "type": "checkbox",
+            "description": "Show debug messages",
+            "defval": "False",
+            "required": false
+        },
+        "RESULT_FILE": {
+            "type": "string",
+            "description": "write output json data to",
+            "defval": "subreg_credit_report.json",
+            "required": false
+        },
+        "ZABBIX_KEY": {
+            "type": "string",
+            "description": "Default name for Zabbix Item key name",
+            "defval": "SubregCreditReport",
+            "required": false
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": "write log messages using",
+            "defval": "console|syslog",
+            "required": false
         }
     },
-    "version": "0.1.0",
-    "multiflexi": "1.5.1"
+    "multiflexi": "1.23"
 }

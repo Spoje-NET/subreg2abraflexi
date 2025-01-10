@@ -73,6 +73,29 @@
             "required": false
         }
     },
-    "version": "0.1.0",
-    "multiflexi": "1.5.1"
+    "APP_DEBUG": {
+        "type": "checkbox",
+        "description": "Show debug messages",
+        "defval": "False",
+        "required": false
+    },
+    "RESULT_FILE": {
+        "type": "string",
+        "description": "write output json data to",
+        "defval": "subreg_domain_import.json",
+        "required": false
+    },
+    "ZABBIX_KEY": {
+        "type": "string",
+        "description": "Default name for Zabbix Item key name",
+        "defval": "SubregDomainImport",
+        "required": false
+    },
+    "EASE_LOGGER": {
+        "type": "string",
+        "description": "write log messages using",
+        "defval": "console|syslog",
+        "required": false
+    },
+    "multiflexi": "1.23"
 }

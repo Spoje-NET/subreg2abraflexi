@@ -18,6 +18,8 @@ namespace SpojeNet;
 \define('APP_NAME', 'Subreg2AbraFlexi');
 
 require_once '../vendor/autoload.php';
+$options = getopt('o::e::', ['output::environment::']);
+
 \Ease\Shared::init(
     [
         'ABRAFLEXI_URL',
@@ -29,8 +31,18 @@ require_once '../vendor/autoload.php';
         'SUBREG_LOGIN',
         'SUBREG_PASSWORD',
     ],
-    '../.env',
+    \array_key_exists('environment', $options) ? $options['environment'] : '../.env',
 );
-
+$exitcode = 0;
 $syncer = new SubregAbraFlexi\SubregPricelist();
-$syncer->import();
+
+if (\Ease\Shared::cfg('APP_DEBUG')) {
+    $syncer->logBanner();
+}
+
+$report = $syncer->import();
+
+$written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
+$syncer->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
+
+exit($exitcode);

@@ -47,7 +47,7 @@ class Customers extends \AbraFlexi\Adresar
 
         if (empty($subregID)) {
             $this->addStatusMessage(
-                \AbraFlexi\RO::uncode($addressCode).': '._('SubReg client without ext:subreg:xxx'),
+                \AbraFlexi\RO::uncode($addressCode) . ': ' . _('SubReg client without ext:subreg:xxx'),
                 'warning',
             );
         } else {
@@ -67,7 +67,12 @@ class Customers extends \AbraFlexi\Adresar
         return $subregLogin;
     }
 
-    public function getCustomers()
+    /**
+     * AbraFlexi Customers list with ext subregID.
+     *
+     * @return array<string, int>
+     */
+    public function getCustomers(): array
     {
         $customers = [];
         $candidates = $this->getColumnsFromAbraFlexi('summary', ['limit' => 0]);
@@ -76,7 +81,7 @@ class Customers extends \AbraFlexi\Adresar
             $this->setData($candidat);
 
             if ($subregId = $this->getExternalID('subreg')) {
-                $customers[$this->getRecordCode()] = $subregId;
+                $customers[$this->getRecordCode()] = (int) $subregId;
             }
         }
 

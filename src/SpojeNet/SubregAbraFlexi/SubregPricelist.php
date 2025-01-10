@@ -22,8 +22,6 @@ namespace SpojeNet\SubregAbraFlexi;
  */
 class SubregPricelist extends \AbraFlexi\Cenik
 {
-    private array $config;
-
     private \Subreg\Client $subreg;
 
     /**
@@ -31,26 +29,20 @@ class SubregPricelist extends \AbraFlexi\Cenik
      */
     public function __construct($init = null, $options = [])
     {
-        $this->config = [
-            'location' => \Ease\Shared::cfg('SUBREG_LOCATION'),
-            'uri' => \Ease\Shared::cfg('SUBREG_URI'),
-            'login' => \Ease\Shared::cfg('SUBREG_LOGIN'),
-            'password' => \Ease\Shared::cfg('SUBREG_PASSWORD'),
-        ];
         parent::__construct($init, $options);
-        $this->subreg = new \Subreg\Client($this->config);
+        $this->subreg = new \Subreg\Client();
         // $this->countries = $this->getCountries();
     }
 
     /**
      * Main Import Loop.
      */
-    public function import(): void
+    public function import(): array
     {
-        $this->subreg->login();
         $domainsToProcess = $this->subreg->pricelist();
 
         $position = 0;
+        $report['domains'] = \count($domainsToProcess);
 
         foreach ($domainsToProcess as $domain => $domainInfo) {
             $synced = false;
@@ -70,7 +62,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
                                     $synced = $this->saveDomain($priceType, $domainInfo);
                                 } catch (\AbraFlexi\Exception $exc) {
                                     echo $exc->getTraceAsString();
-                                    $this->addStatusMessage('Error importing domain: '.$domain, 'error');
+                                    $this->addStatusMessage('Error importing domain: ' . $domain, 'error');
                                 }
 
                                 break;
@@ -93,7 +85,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
 
                             default:
                                 if ((float) $priceValue) {
-                                    $this->addStatusMessage($domain.': '._('Unhandled price type').': '.$priceType, 'warning');
+                                    $this->addStatusMessage($domain . ': ' . _('Unhandled price type') . ': ' . $priceType, 'warning');
                                 }
 
                                 break;
@@ -101,11 +93,15 @@ class SubregPricelist extends \AbraFlexi\Cenik
                     }
                 }
 
-                $this->addStatusMessage($domain.': '.(++$position).'/'.\count($domainsToProcess).' '.$this->getRecordCode(), $synced ? 'success' : 'error');
+                $this->addStatusMessage($domain . ': ' . (++$position) . '/' . \count($domainsToProcess) . ' ' . $this->getRecordCode(), $synced ? 'success' : 'error');
             } else {
-                $this->addStatusMessage($domain.': '._('No prices provided ?!?'), 'warning');
+                $this->addStatusMessage($domain . ': ' . _('No prices provided ?!?'), 'warning');
             }
+
+            $report[$synced ? 'success' : 'fail'][$domain] = $domainInfo;
         }
+
+        return $report;
     }
 
     /**
@@ -127,25 +123,25 @@ class SubregPricelist extends \AbraFlexi\Cenik
             $price = (float) $domainInfo['prices'][$type];
 
             if ($type !== 'register') {
-                $itemType = '_'.$type;
+                $itemType = '_' . $type;
             }
         }
 
         $this->dataReset();
-        $this->setDataValue('id', 'ext:subreg:'.$domainInfo['name'].$itemType);
+        $this->setDataValue('id', 'ext:subreg:' . $domainInfo['name'] . $itemType);
         //            $asciiDomain = iconv('UTF-8', 'ASCII//IGNORE', $domain);
         //            if(($asciiDomain != $domain) && $this->recordExists(\AbraFlexi\Functions::code($asciiDomain))){
         //                $this->addStatusMessage('Old Domain Code '. \AbraFlexi\Functions::code($asciiDomain) . ' Removal', $this->deleteFromAbraFlexi() ? 'success' : 'warning');
         //            }
         //            if ($asciiDomain != $domain) {
-        $this->setDataValue('kod', 'DOMENA'.$domainInfo['name'].$itemType);
+        $this->setDataValue('kod', 'DOMENA' . $domainInfo['name'] . $itemType);
         //            } else {
         //            }
 
-        $this->setDataValue('nazev', '*.'.$domain.' '.str_replace('_', '', $itemType));
+        $this->setDataValue('nazev', '*.' . $domain . ' ' . str_replace('_', '', $itemType));
         $this->setDataValue(
             'popis',
-            str_replace('_', '', $itemType).' Doména '.$domainInfo['country'].' ('.$domainInfo['continent'].')',
+            str_replace('_', '', $itemType) . ' Doména ' . $domainInfo['country'] . ' (' . $domainInfo['continent'] . ')',
         );
         $this->setDataValue('nakupCena', $price);
         //            $this->setDataValue('cenaZakl', $price);
@@ -172,13 +168,13 @@ class SubregPricelist extends \AbraFlexi\Cenik
         $restult = false;
         $supplier = new \AbraFlexi\RW([
             'cenik' => $this->getRecordCode(),
-            'firma' => 'code:'.\Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'),
+            'firma' => 'code:' . \Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'),
             'kodIndi' => $this->getDataValue('kod'),
             'primarni' => true,
             'nakupCena' => $this->getDataValue('nakupCena'),
         ], ['evidence' => 'dodavatel']);
 
-        if ($supplier->recordExists(['firma' => 'code:'.\Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'), 'kodIndi' => $this->getDataValue('kod')])) {
+        if ($supplier->recordExists(['firma' => 'code:' . \Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'), 'kodIndi' => $this->getDataValue('kod')])) {
             $supplier->insertToAbraFlexi(['id' => $supplier->lastResult['dodavatel'][0]['id'],
                 'nakupCena' => $this->getDataValue('nakupCena')]);
             $restult = true;
@@ -204,11 +200,11 @@ class SubregPricelist extends \AbraFlexi\Cenik
      */
     public function addFlag($code)
     {
-        $flagFile = 'images/country-flags/png250px/'.$code.'.png';
+        $flagFile = 'images/country-flags/png250px/' . $code . '.png';
         $result = 0;
 
         if (!file_exists($flagFile)) {
-            $flagFile = '../'.$flagFile;
+            $flagFile = '../' . $flagFile;
         }
 
         if ($code && file_exists($flagFile)) {
@@ -237,7 +233,7 @@ class SubregPricelist extends \AbraFlexi\Cenik
         $countriesRaw = $contryer->getColumnsFromAbraFlexi(['kod', 'nazev']);
 
         foreach ($countriesRaw as $countryInfo) {
-            $countries[$countryInfo['nazev']] = 'code:'.$countryInfo['kod'];
+            $countries[$countryInfo['nazev']] = 'code:' . $countryInfo['kod'];
         }
 
         return $countries;
