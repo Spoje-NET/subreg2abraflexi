@@ -71,31 +71,31 @@
             "description": "Gransy Code in AbraFlexi Addressbook",
             "defval": "GRANSY",
             "required": false
+        },
+        "APP_DEBUG": {
+            "type": "checkbox",
+            "description": "Show debug messages",
+            "defval": "False",
+            "required": false
+        },
+        "RESULT_FILE": {
+            "type": "string",
+            "description": "write output json data to",
+            "defval": "subreg_domain_import.json",
+            "required": false
+        },
+        "ZABBIX_KEY": {
+            "type": "string",
+            "description": "Default name for Zabbix Item key name",
+            "defval": "SubregDomainImport",
+            "required": false
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": "write log messages using",
+            "defval": "console|syslog",
+            "required": false
         }
-    },
-    "APP_DEBUG": {
-        "type": "checkbox",
-        "description": "Show debug messages",
-        "defval": "False",
-        "required": false
-    },
-    "RESULT_FILE": {
-        "type": "string",
-        "description": "write output json data to",
-        "defval": "subreg_domain_import.json",
-        "required": false
-    },
-    "ZABBIX_KEY": {
-        "type": "string",
-        "description": "Default name for Zabbix Item key name",
-        "defval": "SubregDomainImport",
-        "required": false
-    },
-    "EASE_LOGGER": {
-        "type": "string",
-        "description": "write log messages using",
-        "defval": "console|syslog",
-        "required": false
     },
     "multiflexi": "1.23"
 }
