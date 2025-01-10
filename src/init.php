@@ -1,28 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * Subreg2AbraFlexi - Shared Init.
+ * This file is part of the Subreg2AbraFlexi package
  *
- * @author Vítězslav Dvořák <vitezslav.dvorak@spojenet.cz>
- * @copyright  2020-2024 SpojeNet s.r.o.
+ * https://github.com/Spoje-NET/subreg2abraflexi/
+ *
+ * (c) Vítězslav Dvořák <http://spojenet.cz/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet;
 
-define('APP_NAME', 'Subreg2AbraFlexi Init');
+\define('APP_NAME', 'Subreg2AbraFlexi Init');
+
 require_once '../vendor/autoload.php';
 \Ease\Shared::init(
     [
-            'ABRAFLEXI_URL',
-            'ABRAFLEXI_LOGIN',
-            'ABRAFLEXI_PASSWORD',
-            'ABRAFLEXI_COMPANY',
-        ],
-    '../.env'
+        'ABRAFLEXI_URL',
+        'ABRAFLEXI_LOGIN',
+        'ABRAFLEXI_PASSWORD',
+        'ABRAFLEXI_COMPANY',
+    ],
+    '../.env',
 );
 
 $engine = new \AbraFlexi\RW(null, ['evidence' => 'merna-jednotka']);
 $engine->logBanner();
+
 if (!$engine->recordExists('code:ROK')) {
     $engine->insertToAbraFlexi(['kod' => 'ROK', 'typMjK' => 'typMj.cas', 'kodTisk' => 'rok', 'kodTiskA' => 'yr', 'nazev' => 'Rok']);
 }

@@ -1,4 +1,10 @@
-subreg2abraflexi (0.2.1) UNRELEASED; urgency=low
+subreg2abraflexi (1.0.0) UNRELEASED; urgency=medium
+
+  * Stabilized
+
+ -- vitex <info@vitexsoftware.cz>  Fri, 10 Jan 2025 11:45:21 +0100
+
+subreg2abraflexi (0.2.1) unstable; urgency=low
 
   [ Vítězslav Dvořák ]
   * Initial release. Closes: #nnnn
@@ -16,4 +22,4 @@ subreg2abraflexi (0.2.1) UNRELEASED; urgency=low
   [  ]
   * Documentation update
 
- --  <vitezslav.dvorak@spojenet.cz>  Tue, 02 Apr 2024 21:15:49 +0200
+ -- vitex <info@vitexsoftware.cz>  Fri, 10 Jan 2025 11:45:06 +0100

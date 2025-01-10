@@ -1,43 +1,44 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * Subreg2AbraFlexi - Credit Checker.
+ * This file is part of the Subreg2AbraFlexi package
  *
- * @author Vítězslav Dvořák <vitezslav.dvorak@spojenet.cz>
- * @copyright  2020-2024 SpojeNet s.r.o.
+ * https://github.com/Spoje-NET/subreg2abraflexi/
+ *
+ * (c) Vítězslav Dvořák <http://spojenet.cz/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet;
 
-define('APP_NAME', 'Subreg Credit Check');
+\define('APP_NAME', 'Subreg Credit Check');
+
 require_once '../vendor/autoload.php';
 \Ease\Shared::init(
     [
-            'ABRAFLEXI_URL',
-            'ABRAFLEXI_LOGIN',
-            'ABRAFLEXI_PASSWORD',
-            'ABRAFLEXI_COMPANY',
-            'SUBREG_LOCATION',
-            'SUBREG_URI',
-            'SUBREG_LOGIN',
-            'SUBREG_PASSWORD'
-        ],
-    '../.env'
+        'ABRAFLEXI_URL',
+        'ABRAFLEXI_LOGIN',
+        'ABRAFLEXI_PASSWORD',
+        'ABRAFLEXI_COMPANY',
+        'SUBREG_LOCATION',
+        'SUBREG_URI',
+        'SUBREG_LOGIN',
+        'SUBREG_PASSWORD',
+    ],
+    '../.env',
 );
 
 $customers = new SubregAbraFlexi\Customers();
 
-$config = [
-    "location" => \Ease\Shared::cfg('SUBREG_LOCATION'),
-    "uri" => \Ease\Shared::cfg('SUBREG_URI'),
-    "login" => \Ease\Shared::cfg('SUBREG_LOGIN'),
-    "password" => \Ease\Shared::cfg('SUBREG_PASSWORD')
-];
-
-$subreg = new \Subreg\Client($config);
+$subreg = new \Subreg\Client();
 $subreg->login();
 
 $report = [];
+
 foreach ($customers->getCustomers() as $flexiCode => $subregId) {
     $customerInfo = $subreg->infoUser($subregId);
     $report[$flexiCode] = [
@@ -46,4 +47,4 @@ foreach ($customers->getCustomers() as $flexiCode => $subregId) {
     ];
 }
 
-echo json_encode($report, \Ease\Shared::cfg('DEBUG') ? JSON_PRETTY_PRINT : 0);
+echo json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0);
