@@ -14,3 +14,4 @@ override_dh_install:
 	sed -i -e 's/\.\.\/.env//g'  debian/subreg2abraflexi/usr/lib/subreg2abraflexi/*.php
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/conf/composer.json |sponge debian/subreg2abraflexi/usr/lib/subreg2abraflexi/composer.json
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_to_abraflexi.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_to_abraflexi.multiflexi.app.json
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_credit_check.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_credit_check.multiflexi.app.json
