@@ -1,8 +1,14 @@
-subreg2abraflexi (1.0.0) UNRELEASED; urgency=medium
+subreg2abraflexi (1.0.1) UNRELEASED; urgency=medium
+
+  * setup now create addressbook record
+
+ -- vitex <info@vitexsoftware.cz>  Sat, 18 Jan 2025 01:01:01 +0100
+
+subreg2abraflexi (1.0.0) unstable; urgency=medium
 
   * Stabilized
 
- -- vitex <info@vitexsoftware.cz>  Fri, 10 Jan 2025 11:45:21 +0100
+ -- vitex <info@vitexsoftware.cz>  Sat, 18 Jan 2025 01:00:58 +0100
 
 subreg2abraflexi (0.2.1) unstable; urgency=low
 

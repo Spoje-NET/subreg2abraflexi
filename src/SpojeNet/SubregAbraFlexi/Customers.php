@@ -47,7 +47,7 @@ class Customers extends \AbraFlexi\Adresar
 
         if (empty($subregID)) {
             $this->addStatusMessage(
-                \AbraFlexi\RO::uncode($addressCode) . ': ' . _('SubReg client without ext:subreg:xxx'),
+                \AbraFlexi\RO::uncode($addressCode).': '._('SubReg client without ext:subreg:xxx'),
                 'warning',
             );
         } else {

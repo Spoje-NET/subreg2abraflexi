@@ -31,7 +31,7 @@ $options = getopt('o::e::', ['output::environment::']);
         'SUBREG_LOGIN',
         'SUBREG_PASSWORD',
     ],
-    \array_key_exists('environment', $options) ? $options['environment'] : '../.env',
+    \array_key_exists('environment', $options) ? $options['environment'] : (\array_key_exists('e', $options) ? $options['e'] : '../.env'),
 );
 $exitcode = 0;
 $syncer = new SubregAbraFlexi\SubregPricelist();

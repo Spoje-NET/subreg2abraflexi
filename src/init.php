@@ -29,8 +29,17 @@ require_once '../vendor/autoload.php';
 );
 
 $engine = new \AbraFlexi\RW(null, ['evidence' => 'merna-jednotka']);
-$engine->logBanner();
+
+if (\Ease\Shared::cfg('APP_DEBUG')) {
+    $syncer->logBanner();
+}
 
 if (!$engine->recordExists('code:ROK')) {
     $engine->insertToAbraFlexi(['kod' => 'ROK', 'typMjK' => 'typMj.cas', 'kodTisk' => 'rok', 'kodTiskA' => 'yr', 'nazev' => 'Rok']);
+}
+
+$engine->setEvidence('adresar');
+
+if (!$engine->recordExists('code:'.\Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'))) {
+    $engine->insertToAbraFlexi(['kod' => \Ease\Shared::cfg('ABRAFLEXI_GRANSY_CODE', 'GRANSY'), 'nazev' => 'Gransy s.r.o.']);
 }
