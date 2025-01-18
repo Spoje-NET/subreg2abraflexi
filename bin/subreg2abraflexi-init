@@ -1,4 +1,3 @@
 #!/bin/bash
-php -f /usr/lib/subreg2abraflexi/init.php $@
-
+php -f /usr/lib/subreg2abraflexi/init.php -- $@
 

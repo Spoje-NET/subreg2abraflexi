@@ -1,4 +1,4 @@
 #!/bin/bash
-php -f /usr/lib/subreg2abraflexi/subregcheckcredit.php $@
+php -f /usr/lib/subreg2abraflexi/subregcheckcredit.php -- $@
 
 

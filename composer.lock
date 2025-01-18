@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3aec26c04b8d4b911f679bf75e62542",
+    "content-hash": "41132dd03f3a471f0a0b5984dece38e7",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -347,16 +347,16 @@
         },
         {
             "name": "spojenet/subreg",
-            "version": "1.2.1",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-subreg.git",
-                "reference": "fa2e615376c014d84f55fcd6567cc694839bccf0"
+                "reference": "7fcaa5e823373be170939b51ebdd19806b4824d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/fa2e615376c014d84f55fcd6567cc694839bccf0",
-                "reference": "fa2e615376c014d84f55fcd6567cc694839bccf0",
+                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/7fcaa5e823373be170939b51ebdd19806b4824d6",
+                "reference": "7fcaa5e823373be170939b51ebdd19806b4824d6",
                 "shasum": ""
             },
             "require": {
@@ -371,6 +371,7 @@
                 "phpstan/phpstan-phpunit": "2.0.x-dev",
                 "phpunit/phpunit": "*"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -390,9 +391,9 @@
             "description": "PHP Based Library for easy interaction with soap.subreg.cz",
             "support": {
                 "issues": "https://github.com/Spoje-NET/php-subreg/issues",
-                "source": "https://github.com/Spoje-NET/php-subreg/tree/1.2.1"
+                "source": "https://github.com/Spoje-NET/php-subreg/tree/main"
             },
-            "time": "2025-01-10T11:21:52+00:00"
+            "time": "2025-01-17T23:36:36+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -1223,22 +1224,22 @@
         },
         {
             "name": "ergebnis/php-cs-fixer-config",
-            "version": "6.42.0",
+            "version": "6.42.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/php-cs-fixer-config.git",
-                "reference": "f12abae06197016f669e380cf4d35252f1ebb8b3"
+                "reference": "9b7ec9359ddc7b702d61625a30cdb3a028f43aa6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/f12abae06197016f669e380cf4d35252f1ebb8b3",
-                "reference": "f12abae06197016f669e380cf4d35252f1ebb8b3",
+                "url": "https://api.github.com/repos/ergebnis/php-cs-fixer-config/zipball/9b7ec9359ddc7b702d61625a30cdb3a028f43aa6",
+                "reference": "9b7ec9359ddc7b702d61625a30cdb3a028f43aa6",
                 "shasum": ""
             },
             "require": {
                 "erickskrauch/php-cs-fixer-custom-fixers": "~1.3.0",
                 "ext-filter": "*",
-                "friendsofphp/php-cs-fixer": "~3.68.0",
+                "friendsofphp/php-cs-fixer": "~3.68.1",
                 "kubawerlos/php-cs-fixer-custom-fixers": "~3.22.0",
                 "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
@@ -1246,7 +1247,7 @@
                 "ergebnis/composer-normalize": "^2.45.0",
                 "ergebnis/data-provider": "^3.4.0",
                 "ergebnis/license": "^2.6.0",
-                "ergebnis/phpstan-rules": "^2.6.0",
+                "ergebnis/phpstan-rules": "^2.6.1",
                 "ergebnis/phpunit-slow-test-detector": "^2.17.0",
                 "ergebnis/rector-rules": "^1.3.0",
                 "fakerphp/faker": "^1.24.1",
@@ -1290,7 +1291,7 @@
                 "security": "https://github.com/ergebnis/php-cs-fixer-config/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/php-cs-fixer-config"
             },
-            "time": "2025-01-15T06:47:06+00:00"
+            "time": "2025-01-18T09:52:30+00:00"
         },
         {
             "name": "erickskrauch/php-cs-fixer-custom-fixers",
@@ -5721,6 +5722,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "spojenet/subreg": 20,
         "phpstan/phpstan-phpunit": 20
     },
     "prefer-stable": false,
