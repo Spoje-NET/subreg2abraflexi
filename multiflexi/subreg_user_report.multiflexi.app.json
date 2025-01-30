@@ -1,41 +1,17 @@
 {
     "image": "",
-    "name": "Subreg credit Check",
-    "description": "Check Subreg Credit for Customers in AbraFlexi",
-    "executable": "subreg-check-credit",
+    "name": "Subreg Users Report",
+    "description": "Subreg Customers in report",
+    "executable": "subreg-users-report",
     "setup": "subreg2abraflexi-init",
     "cmdparams": "",
     "deploy": "apt install subreg2abraflexi",
     "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
-    "requirements": "AbraFlexi,Subreg",
+    "requirements": "Subreg",
     "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
-    "uuid": "ca0f8b32-836b-421f-80a5-8e382951dcfa",
+    "uuid": "1acdc88b-b15a-489e-a80f-450eeb7a6212",
     "topics": "Subreg,Credit,Check,Json",
     "environment": {
-        "ABRAFLEXI_COMPANY": {
-            "type": "string",
-            "description": "AbraFlexi comapny code",
-            "defval": "demo_de",
-            "required": true
-        },
-        "ABRAFLEXI_LOGIN": {
-            "type": "string",
-            "description": "AbraFlexi Login",
-            "defval": "winstrom",
-            "required": true
-        },
-        "ABRAFLEXI_PASSWORD": {
-            "type": "password",
-            "description": "AbraFlexi password",
-            "defval": "winstrom",
-            "required": true
-        },
-        "ABRAFLEXI_URL": {
-            "type": "string",
-            "description": "AbraFlexi Server URI",
-            "defval": "https://demo.flexibee.eu:5434",
-            "required": true
-        },
         "SUBREG_LOCATION": {
             "type": "string",
             "description": "Command Endpoint",
@@ -59,12 +35,6 @@
             "description": "Your Subreg password",
             "defval": "",
             "required": true
-        },
-        "ABRAFLEXI_GRANSY_CODE": {
-            "type": "password",
-            "description": "Gransy Code in AbraFlexi Addressbook",
-            "defval": "GRANSY",
-            "required": false
         },
         "APP_DEBUG": {
             "type": "checkbox",
@@ -91,5 +61,5 @@
             "required": false
         }
     },
-    "multiflexi": "1.23"
+    "multiflexi": "1.25"
 }

@@ -12,7 +12,7 @@ Rules-Requires-Root: no
 Package: subreg2abraflexi
 Architecture: any
 Multi-Arch: foreign
-Depends: composer-debian, php-spojenet-abraflexi, php-spojenet-subreg
+Depends: composer-debian, php-spojenet-abraflexi, php-spojenet-subreg (>=1.3.0)
 Description: Import Subreg Pricelist into AbraFlexi 
 
 Package: multiflexi-subreg2abraflexi

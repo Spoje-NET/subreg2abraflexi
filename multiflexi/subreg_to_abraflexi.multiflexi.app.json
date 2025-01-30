@@ -7,7 +7,7 @@
     "cmdparams": "",
     "deploy": "apt install subreg2abraflexi",
     "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
-    "requirements": "AbraFlexi",
+    "requirements": "AbraFlexi,Subreg",
     "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
     "uuid": "5a37f926-2b26-44ff-ba02-25ac817eb005",
     "topics": "Subreg,DNS,Domains",
