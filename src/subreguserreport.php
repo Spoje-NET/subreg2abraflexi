@@ -19,7 +19,7 @@ namespace SpojeNet;
 
 require_once '../vendor/autoload.php';
 
-$options = getopt('o::e::', ['output::environment::']);
+$options = getopt('o::e::u::', ['output::environment::username::']);
 
 \Ease\Shared::init(
     [
@@ -31,6 +31,7 @@ $options = getopt('o::e::', ['output::environment::']);
     \array_key_exists('environment', $options) ? $options['environment'] : (\array_key_exists('e', $options) ? $options['e'] : '../.env'),
 );
 $destination = \array_key_exists('o', $options) ? $options['o'] : (\array_key_exists('output', $options) ? $options['output'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout'));
+$username = \array_key_exists('u', $options) ? $options['u'] : (\array_key_exists('username', $options) ? $options['username'] : \Ease\Shared::cfg('USERNAME', ''));
 $exitcode = 0;
 
 try {
@@ -46,7 +47,13 @@ try {
 
     if (\array_key_exists('users', $userListData)) {
         foreach ($userListData['users'] as $subregUserData) {
-            $report[] = $subregUserData;
+            if ($username) {
+                if ($username === $userListData['username']) {
+                    $report[] = $subregUserData;
+                }
+            } else {
+                $report[] = $subregUserData;
+            }
         }
     }
 } catch (\Exception $exc) {

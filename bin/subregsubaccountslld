@@ -1,0 +1,5 @@
+#!/bin/bash
+php -f /usr/lib/subreg2abraflexi/subregsubaccountsLLD.php -- $@
+
+
+
