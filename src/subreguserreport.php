@@ -31,15 +31,15 @@ $options = getopt('o::e::', ['output::environment::']);
         \array_key_exists('environment', $options) ? $options['environment'] : '../.env',
 );
 
-$exitcode = 0;
-
-if (\Ease\Shared::cfg('APP_DEBUG')) {
-    $syncer->logBanner();
-}
-
 $destination = \array_key_exists('output', $options) ? $options['output'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout');
 
 $subreg = new \Subreg\Commands();
+
+$exitcode = 0;
+
+if (\Ease\Shared::cfg('APP_DEBUG')) {
+    $subreg->logBanner();
+}
 
 $report = [];
 
