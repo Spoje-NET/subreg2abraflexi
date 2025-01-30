@@ -25,7 +25,7 @@ require_once '../vendor/autoload.php';
         'ABRAFLEXI_PASSWORD',
         'ABRAFLEXI_COMPANY',
     ],
-    '../.env',
+    \array_key_exists('environment', $options) ? $options['environment'] : (\array_key_exists('e', $options) ? $options['e'] : '../.env'),
 );
 
 $engine = new \AbraFlexi\RW(null, ['evidence' => 'merna-jednotka']);

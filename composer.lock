@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41132dd03f3a471f0a0b5984dece38e7",
+    "content-hash": "b3aec26c04b8d4b911f679bf75e62542",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -347,16 +347,16 @@
         },
         {
             "name": "spojenet/subreg",
-            "version": "dev-main",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-subreg.git",
-                "reference": "03720464e011d51bcd2a051c770f369a37ab9cd3"
+                "reference": "fa2e615376c014d84f55fcd6567cc694839bccf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/03720464e011d51bcd2a051c770f369a37ab9cd3",
-                "reference": "03720464e011d51bcd2a051c770f369a37ab9cd3",
+                "url": "https://api.github.com/repos/Spoje-NET/php-subreg/zipball/fa2e615376c014d84f55fcd6567cc694839bccf0",
+                "reference": "fa2e615376c014d84f55fcd6567cc694839bccf0",
                 "shasum": ""
             },
             "require": {
@@ -371,7 +371,6 @@
                 "phpstan/phpstan-phpunit": "2.0.x-dev",
                 "phpunit/phpunit": "*"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -391,9 +390,9 @@
             "description": "PHP Based Library for easy interaction with soap.subreg.cz",
             "support": {
                 "issues": "https://github.com/Spoje-NET/php-subreg/issues",
-                "source": "https://github.com/Spoje-NET/php-subreg/tree/main"
+                "source": "https://github.com/Spoje-NET/php-subreg/tree/1.2.1"
             },
-            "time": "2025-01-30T11:36:59+00:00"
+            "time": "2025-01-10T11:21:52+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -1470,16 +1469,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.68.4",
+            "version": "v3.68.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "5c2f466ef3d7eba8af9463bcab829370b975333f"
+                "reference": "7bedb718b633355272428c60736dc97fb96daf27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/5c2f466ef3d7eba8af9463bcab829370b975333f",
-                "reference": "5c2f466ef3d7eba8af9463bcab829370b975333f",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/7bedb718b633355272428c60736dc97fb96daf27",
+                "reference": "7bedb718b633355272428c60736dc97fb96daf27",
                 "shasum": ""
             },
             "require": {
@@ -1561,7 +1560,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.68.4"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.68.5"
             },
             "funding": [
                 {
@@ -1569,7 +1568,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-30T09:14:56+00:00"
+            "time": "2025-01-30T17:00:50+00:00"
         },
         {
             "name": "icecave/parity",
@@ -5722,7 +5721,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spojenet/subreg": 20,
         "phpstan/phpstan-phpunit": 20
     },
     "prefer-stable": false,

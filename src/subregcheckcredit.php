@@ -32,17 +32,16 @@ $options = getopt('o::e::', ['output::environment::']);
         'SUBREG_LOGIN',
         'SUBREG_PASSWORD',
     ],
-    \array_key_exists('environment', $options) ? $options['environment'] : '../.env',
+    \array_key_exists('environment', $options) ? $options['environment'] : (\array_key_exists('e', $options) ? $options['e'] : '../.env'),
 );
+$destination = \array_key_exists('o', $options) ? $options['o'] : (\array_key_exists('output', $options) ? $options['output'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout'));
 
 $exitcode = 0;
 $customers = new SubregAbraFlexi\Customers();
 
 if (\Ease\Shared::cfg('APP_DEBUG')) {
-    $syncer->logBanner();
+    $customers->logBanner();
 }
-
-$destination = \array_key_exists('output', $options) ? $options['output'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout');
 
 $subreg = new \Subreg\Client();
 
