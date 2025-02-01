@@ -49,7 +49,7 @@ try {
         foreach ($userListData['users'] as $subregUserData) {
             if ($username) {
                 if ($username === $subregUserData['username']) {
-                    $report[] = $subregUserData;
+                    $report = $subregUserData;
                 }
             } else {
                 $report[] = $subregUserData;
