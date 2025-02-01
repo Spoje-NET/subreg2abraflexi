@@ -48,7 +48,7 @@ try {
     if (\array_key_exists('users', $userListData)) {
         foreach ($userListData['users'] as $subregUserData) {
             if ($username) {
-                if ($username === $userListData['username']) {
+                if ($username === $subregUserData['username']) {
                     $report[] = $subregUserData;
                 }
             } else {
