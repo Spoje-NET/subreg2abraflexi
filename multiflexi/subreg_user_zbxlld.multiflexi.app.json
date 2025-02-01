@@ -1,0 +1,65 @@
+{
+    "image": "",
+    "name": "Subreg Users LLD for Zabbix",
+    "description": "Notify Zabbix about created/removed Subreg users",
+    "executable": "subregsubaccountslld",
+    "setup": "subreg2abraflexi-init",
+    "cmdparams": "",
+    "deploy": "apt install subreg2abraflexi",
+    "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
+    "requirements": "Subreg",
+    "ociimage": "",
+    "uuid": "804ca7c8-d81e-4d62-9999-1ddcd425b247",
+    "topics": "Subreg,Credit,Check,Json,Zabbix,LLD",
+    "environment": {
+        "SUBREG_LOCATION": {
+            "type": "string",
+            "description": "Command Endpoint",
+            "defval": "https://soap.subreg.cz/cmd.php",
+            "required": true
+        },
+        "SUBREG_URI": {
+            "type": "string",
+            "description": "SOAP Endpoint",
+            "defval": "https://soap.subreg.cz/soap",
+            "required": true
+        },
+        "SUBREG_LOGIN": {
+            "type": "string",
+            "description": "Your Subreg username",
+            "defval": "",
+            "required": true
+        },
+        "SUBREG_PASSWORD": {
+            "type": "password",
+            "description": "Your Subreg password",
+            "defval": "",
+            "required": true
+        },
+        "APP_DEBUG": {
+            "type": "checkbox",
+            "description": "Show debug messages",
+            "defval": "False",
+            "required": false
+        },
+        "RESULT_FILE": {
+            "type": "string",
+            "description": "write output json data to",
+            "defval": "subreg_credit_report.json",
+            "required": false
+        },
+        "ZABBIX_KEY": {
+            "type": "string",
+            "description": "Default name for Zabbix Item key name",
+            "defval": "SubregCreditReport",
+            "required": false
+        },
+        "EASE_LOGGER": {
+            "type": "string",
+            "description": "write log messages using",
+            "defval": "console|syslog",
+            "required": false
+        }
+    },
+    "multiflexi": "1.25"
+}

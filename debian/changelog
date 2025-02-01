@@ -1,8 +1,15 @@
-subreg2abraflexi (1.0.2) UNRELEASED; urgency=medium
+subreg2abraflexi (1.1.0) UNRELEASED; urgency=medium
 
+  * Zabbix LLD script added
+
+ --  <vitezslav.dvorak@spojenet.cz>  Sat, 01 Feb 2025 12:12:46 +0100
+
+subreg2abraflexi (1.0.2) unstable; urgency=medium
+
+  [ vitex ]
   * report saving fixed
 
- -- vitex <info@vitexsoftware.cz>  Sat, 18 Jan 2025 15:30:58 +0100
+ --  <vitezslav.dvorak@spojenet.cz>  Sat, 01 Feb 2025 12:12:34 +0100
 
 subreg2abraflexi (1.0.1) unstable; urgency=medium
 
