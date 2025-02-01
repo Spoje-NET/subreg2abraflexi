@@ -54,6 +54,7 @@ try {
                 '{#CREDIT}' => $subregUserData['credit'],
                 '{#CURRENCY}' => $subregUserData['currency'],
                 '{#BILLING_NAME}' => $subregUserData['billing_name'],
+                '{#BILLING_NAME_SIMPLE}' => \Ease\Functions::rip($subregUserData['billing_name']),
                 '{#BILLING_STREET}' => $subregUserData['billing_street'],
                 '{#BILLING_CITY}' => $subregUserData['billing_city'],
                 '{#BILLING_PC}' => $subregUserData['billing_pc'],
