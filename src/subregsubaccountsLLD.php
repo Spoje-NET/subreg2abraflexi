@@ -54,7 +54,7 @@ try {
                 '{#CREDIT}' => $subregUserData['credit'],
                 '{#CURRENCY}' => $subregUserData['currency'],
                 '{#BILLING_NAME}' => $subregUserData['billing_name'],
-                '{#BILLING_NAME_SIMPLE}' => \Ease\Functions::rip($subregUserData['billing_name']),
+                '{#BILLING_NAME_SIMPLE}' => preg_replace('/[^a-zA-Z0-9\.\s]/', '', \Ease\Functions::rip($subregUserData['billing_name'])),
                 '{#BILLING_STREET}' => $subregUserData['billing_street'],
                 '{#BILLING_CITY}' => $subregUserData['billing_city'],
                 '{#BILLING_PC}' => $subregUserData['billing_pc'],
@@ -82,7 +82,7 @@ try {
     $report['message'] = $exc->getMessage();
 }
 
-$written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT|\JSON_INVALID_UTF8_IGNORE : 0));
+$written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT | \JSON_INVALID_UTF8_IGNORE : 0));
 $subreg->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
 
 exit($exitcode);

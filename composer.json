@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "spojenet/subreg": "^1.2",
-        "spojenet/flexibee": "^3.3"
+        "spojenet/flexibee": "^3.5"
     },
     "license": "MIT",
     "autoload": {
@@ -21,9 +21,9 @@
     "require-dev": {
         "phpunit/phpunit": "*",
         "phpstan/phpstan": "*",
-        "friendsofphp/php-cs-fixer": "^3.61",
-        "ergebnis/composer-normalize": "^2.43",
-        "ergebnis/php-cs-fixer-config": "^6.34",
+        "friendsofphp/php-cs-fixer": "^3.68",
+        "ergebnis/composer-normalize": "^2.45",
+        "ergebnis/php-cs-fixer-config": "^6.49",
         "phpstan/phpstan-phpunit": "2.0.x-dev"
     },
     "minimum-stability": "dev",

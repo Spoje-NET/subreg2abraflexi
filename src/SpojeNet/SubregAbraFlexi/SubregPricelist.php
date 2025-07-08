@@ -19,6 +19,8 @@ namespace SpojeNet\SubregAbraFlexi;
  * Description of SubregPricelist.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
+ *
+ * @no-named-arguments
  */
 class SubregPricelist extends \AbraFlexi\Cenik
 {

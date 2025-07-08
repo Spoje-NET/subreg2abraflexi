@@ -18,6 +18,8 @@ namespace SpojeNet;
 \define('APP_NAME', 'Subreg2AbraFlexi Init');
 
 require_once '../vendor/autoload.php';
+$options = getopt('o::e::', ['output::environment::']);
+
 \Ease\Shared::init(
     [
         'ABRAFLEXI_URL',
@@ -31,7 +33,7 @@ require_once '../vendor/autoload.php';
 $engine = new \AbraFlexi\RW(null, ['evidence' => 'merna-jednotka']);
 
 if (\Ease\Shared::cfg('APP_DEBUG')) {
-    $syncer->logBanner();
+    $engine->logBanner();
 }
 
 if (!$engine->recordExists('code:ROK')) {

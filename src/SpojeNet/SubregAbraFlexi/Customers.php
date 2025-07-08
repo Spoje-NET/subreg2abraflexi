@@ -26,6 +26,8 @@ namespace SpojeNet\SubregAbraFlexi;
  * Description of Customers.
  *
  * @author vitex
+ *
+ * @no-named-arguments
  */
 class Customers extends \AbraFlexi\Adresar
 {
