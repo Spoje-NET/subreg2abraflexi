@@ -7,10 +7,10 @@
     "cmdparams": "",
     "deploy": "apt install subreg2abraflexi",
     "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
-    "requirements": "Subreg",
+    "requirements": ["Subreg"],
     "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
     "uuid": "1acdc88b-b15a-489e-a80f-450eeb7a6212",
-    "topics": "Subreg,Credit,Check,Json",
+    "topics": ["Subreg", "Credit", "Check", "Json"],
     "environment": {
         "SUBREG_LOCATION": {
             "type": "string",

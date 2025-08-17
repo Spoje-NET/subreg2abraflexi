@@ -7,10 +7,10 @@
     "cmdparams": "",
     "deploy": "apt install subreg2abraflexi",
     "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
-    "requirements": "Subreg",
+    "requirements": ["Subreg"],
     "ociimage": "",
     "uuid": "804ca7c8-d81e-4d62-9999-1ddcd425b247",
-    "topics": "Subreg,Credit,Check,Json,Zabbix,LLD",
+    "topics": ["Subreg", "Credit", "Check", "Json", "Zabbix", "LLD"],
     "environment": {
         "SUBREG_LOCATION": {
             "type": "string",
