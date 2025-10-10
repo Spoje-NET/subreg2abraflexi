@@ -19,8 +19,6 @@
         "LLD"
     ],
     "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
-    "image": "",
-    "ociimage": "",
     "executable": "subregsubaccountslld",
     "environment": {
         "SUBREG_LOCATION": {

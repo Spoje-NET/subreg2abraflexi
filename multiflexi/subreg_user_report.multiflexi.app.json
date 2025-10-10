@@ -17,7 +17,6 @@
         "Json"
     ],
     "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
-    "image": "",
     "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
     "executable": "subreg-users-report",
     "environment": {
