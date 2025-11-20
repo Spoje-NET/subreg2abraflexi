@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-    "schemaVersion": "3.0.0",
+    "schemaVersion": "3.1.0",
     "uuid": "5a37f926-2b26-44ff-ba02-25ac817eb005",
     "name": {
         "en": "Subreg to AbraFlexi",
@@ -158,6 +158,16 @@
             "defval": "console|syslog",
             "required": false,
             "category": "Behavior"
+        }
+    },
+    "exitCodes": {
+        "0": {
+            "description": {
+                "en": "Success",
+                "cs": "Úspěch"
+            },
+            "severity": "success",
+            "retry": false
         }
     }
 }

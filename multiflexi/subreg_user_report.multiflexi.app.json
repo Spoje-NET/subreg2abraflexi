@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-    "schemaVersion": "3.0.0",
+    "schemaVersion": "3.1.0",
     "uuid": "1acdc88b-b15a-489e-a80f-450eeb7a6212",
     "name": {
         "en": "Subreg Users Report",
@@ -99,6 +99,16 @@
             "defval": "console|syslog",
             "required": false,
             "category": "Behavior"
+        }
+    },
+    "exitCodes": {
+        "0": {
+            "description": {
+                "en": "Success",
+                "cs": "Úspěch"
+            },
+            "severity": "success",
+            "retry": false
         }
     }
 }

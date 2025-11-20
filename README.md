@@ -1309,3 +1309,9 @@ sudo apt install subreg2abraflexi
 ```	    
 
 
+
+## Exit Codes
+
+Applications in this package use the following exit codes:
+
+- `0`: Success
