@@ -18,6 +18,6 @@ Description: Import Subreg Pricelist into AbraFlexi
 Package: multiflexi-subreg2abraflexi
 Architecture: all
 Multi-Arch: foreign
-Depends: subreg2abraflexi, multiflexi
+Depends: subreg2abraflexi, multiflexi-cli
 Description: Add subreg2abraflexi into MultiFlexi
  Application Definition for MultiFlexi
