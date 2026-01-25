@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.spoje_net.subreg2abraflexi</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>subreg2abraflexi</name>
+  <summary>Import Subreg Pricelist into AbraFlexi </summary>
+  <description>
+    <p>
+      Application Definition for MultiFlexi
+    </p>
+  </description>
+  <categories>
+    <category>System</category>
+    <category>ConsoleOnly</category>
+  </categories>
+  <url type="homepage">https://github.com/Spoje-NET/subreg2abraflexi</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/subreg2abraflexi/issues</url>
+  <developer id="io.github.spoje_net">
+    <name>Spoje.Net</name>
+  </developer>
+  <provides>
+    <binary>subreg2abraflexi</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
