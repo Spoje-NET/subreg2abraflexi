@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
   "schemaVersion": "3.2.1",
   "uuid": "1acdc88b-b15a-489e-a80f-450eeb7a6212",
   "name": {
@@ -10,6 +10,9 @@
     "en": "Subreg Customers in report",
     "cs": "Zákazníci Subreg v reportu"
   },
+  "requirements": [
+    "Subreg"
+  ],
   "tags": [
     "Subreg",
     "Credit",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
   "schemaVersion": "3.2.1",
   "uuid": "804ca7c8-d81e-4d62-9999-1ddcd425b247",
   "name": {
@@ -10,6 +10,9 @@
     "en": "Notify Zabbix about created/removed Subreg users",
     "cs": "Upozornit Zabbix na vytvořené/odstraněné uživatele Subreg"
   },
+  "requirements": [
+    "Subreg"
+  ],
   "tags": [
     "Subreg",
     "Credit",

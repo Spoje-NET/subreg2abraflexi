@@ -1,8 +1,14 @@
-subreg2abraflexi (1.1.2) UNRELEASED; urgency=medium
+subreg2abraflexi (1.2.0) UNRELEASED; urgency=medium
+
+  * subreg credential prototype package produced now
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 01 Feb 2026 11:44:16 +0100
+
+subreg2abraflexi (1.1.2) unstable; urgency=medium
 
   * update
 
- -- vitex <info@vitexsoftware.cz>  Wed, 03 Dec 2025 13:47:15 +0100
+ -- vitex <info@vitexsoftware.cz>  Sun, 01 Feb 2026 11:43:42 +0100
 
 subreg2abraflexi (1.1.1) unstable; urgency=medium
 

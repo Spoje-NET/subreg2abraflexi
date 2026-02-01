@@ -1,0 +1,67 @@
+.TH SUBREG-USERS-REPORT 1 "February 2026" "subreg2abraflexi 1.1.2" "User Commands"
+.SH NAME
+subreg-users-report \- Generate user report from Subreg
+.SH SYNOPSIS
+.B subreg-users-report
+[\fB\-o\fR \fIoutput\fR]
+[\fB\-e\fR \fIenvironment\fR]
+[\fB\-u\fR \fIusername\fR]
+[\fB\-\-output\fR=\fIfile\fR]
+[\fB\-\-environment\fR=\fIfile\fR]
+[\fB\-\-username\fR=\fIuser\fR]
+.SH DESCRIPTION
+.B subreg-users-report
+generates a comprehensive user report from Subreg registrar system. The tool
+connects to Subreg API and retrieves detailed information about users, domains,
+and account status. It can generate reports for all users or for a specific
+username when specified.
+.SH OPTIONS
+.TP
+\fB\-o\fR, \fB\-\-output\fR=\fIFILE\fR
+Write output JSON data to FILE instead of stdout
+.TP
+\fB\-e\fR, \fB\-\-environment\fR=\fIFILE\fR
+Load environment variables from FILE (default: ../.env)
+.TP
+\fB\-u\fR, \fB\-\-username\fR=\fIUSER\fR
+Generate report for specific username only
+.SH ENVIRONMENT
+The following environment variables are used:
+.TP
+.B SUBREG_URI
+Subreg SOAP endpoint (default: https://soap.subreg.cz/soap)
+.TP
+.B SUBREG_LOCATION
+Subreg command endpoint (default: https://soap.subreg.cz/cmd.php)
+.TP
+.B SUBREG_LOGIN
+Subreg username for API access
+.TP
+.B SUBREG_PASSWORD
+Subreg password for API access
+.TP
+.B APP_DEBUG
+Enable debug output (true/false)
+.TP
+.B RESULT_FILE
+Default output file for results
+.SH OUTPUT
+The tool outputs JSON data containing user information retrieved from Subreg API,
+including user details, domain information, and account statistics.
+.SH EXIT STATUS
+.TP
+0
+Success
+.TP
+1
+Error during report generation
+.SH FILES
+.TP
+.I ../.env
+Default environment file
+.SH AUTHOR
+Vítězslav Dvořák <info@vitexsoftware.cz>
+.SH SEE ALSO
+.BR subreg2abraflexi (1),
+.BR subreg-check-credit (1),
+.BR subregsubaccountslld (1)

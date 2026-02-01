@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/credential-prototype.json",
+  "uuid": "deb5daff-cda5-4739-a915-bb25fb1fe810",
+  "code": "Subreg",
+  "name": "Subreg API Credentials",
+  "description": "Configuration for connecting to Subreg domain registrar API services",
+  "version": "1.0.0",
+  "logo": "subreg-logo.png",
+  "url": "https://www.subreg.cz/",
+  "fields": [
+    {
+      "keyword": "SUBREG_LOGIN",
+      "type": "string",
+      "name": "Subreg Username",
+      "description": "Your Subreg account username for API access",
+      "hint": "Enter your Subreg login username",
+      "required": true
+    },
+    {
+      "keyword": "SUBREG_PASSWORD",
+      "type": "password",
+      "name": "Subreg Password",
+      "description": "Your Subreg account password for API access",
+      "hint": "Enter your Subreg login password",
+      "required": true
+    },
+    {
+      "keyword": "SUBREG_URI",
+      "type": "url",
+      "name": "SOAP Endpoint URL",
+      "description": "Subreg SOAP API endpoint URL",
+      "hint": "https://soap.subreg.cz/soap",
+      "default_value": "https://soap.subreg.cz/soap",
+      "required": true
+    },
+    {
+      "keyword": "SUBREG_LOCATION",
+      "type": "url",
+      "name": "Command Endpoint URL",
+      "description": "Subreg command API endpoint URL",
+      "hint": "https://soap.subreg.cz/cmd.php",
+      "default_value": "https://soap.subreg.cz/cmd.php",
+      "required": true
+    }
+  ]
+}

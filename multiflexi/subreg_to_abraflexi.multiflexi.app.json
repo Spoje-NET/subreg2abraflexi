@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
   "schemaVersion": "3.2.1",
   "uuid": "5a37f926-2b26-44ff-ba02-25ac817eb005",
   "name": {
@@ -10,6 +10,10 @@
     "en": "Import Subreg Pricelist into AbraFlexi",
     "cs": "Import ceníku Subreg do AbraFlexi"
   },
+  "requirements": [
+    "Subreg",
+    "AbraFlexi"
+  ],
   "tags": [
     "Subreg",
     "DNS",

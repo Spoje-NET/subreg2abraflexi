@@ -1,5 +1,5 @@
-multiflexi/*.json  usr/lib/subreg2abraflexi/multiflexi
-multiflexi/*.svg   usr/share/multiflexi/images
-
-
-
+multiflexi/*.app.json  usr/lib/subreg2abraflexi/multiflexi
+multiflexi/1acdc88b-b15a-489e-a80f-450eeb7a6212.svg usr/share/multiflexi/images
+multiflexi/5a37f926-2b26-44ff-ba02-25ac817eb005.svg usr/share/multiflexi/images
+multiflexi/804ca7c8-d81e-4d62-9999-1ddcd425b247.svg usr/share/multiflexi/images
+multiflexi/ca0f8b32-836b-421f-80a5-8e382951dcfa.svg usr/share/multiflexi/images

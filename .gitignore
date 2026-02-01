@@ -18,3 +18,7 @@ composer.phar
 /debian/multiflexi-subreg2abraflexi.substvars
 /.php-cs-fixer.cache
 /.build/
+/debian/multiflexi-subreg/
+/debian/multiflexi-subreg.debhelper.log
+/debian/multiflexi-subreg.substvars
+

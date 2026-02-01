@@ -1,0 +1,9 @@
+#!/bin/sh
+# prerm script for multiflexi-subreg package
+set -e
+
+. /usr/share/debconf/confmodule
+
+multiflexi-cli crprototype delete --code subreg
+exit 0
+# End of multiflexi-subreg prerm script

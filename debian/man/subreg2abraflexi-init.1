@@ -1,0 +1,62 @@
+.TH SUBREG2ABRAFLEXI-INIT 1 "February 2026" "subreg2abraflexi 1.1.2" "User Commands"
+.SH NAME
+subreg2abraflexi-init \- Initialize AbraFlexi for Subreg integration
+.SH SYNOPSIS
+.B subreg2abraflexi-init
+[\fB\-o\fR \fIoutput\fR]
+[\fB\-e\fR \fIenvironment\fR]
+[\fB\-\-output\fR=\fIfile\fR]
+[\fB\-\-environment\fR=\fIfile\fR]
+.SH DESCRIPTION
+.B subreg2abraflexi-init
+initializes AbraFlexi system for Subreg integration by creating required 
+measurement units and address book entries. This command should be run once 
+before using other Subreg2AbraFlexi tools.
+.PP
+The initialization process includes:
+.IP \(bu 2
+Creating the "ROK" (year) measurement unit if it doesn't exist
+.IP \(bu 2
+Creating Gransy s.r.o. entry in the address book if it doesn't exist
+.SH OPTIONS
+.TP
+\fB\-o\fR, \fB\-\-output\fR=\fIFILE\fR
+Write output to FILE instead of stdout
+.TP
+\fB\-e\fR, \fB\-\-environment\fR=\fIFILE\fR
+Load environment variables from FILE (default: ../.env)
+.SH ENVIRONMENT
+The following environment variables are used:
+.TP
+.B ABRAFLEXI_URL
+AbraFlexi server URI (e.g., https://demo.flexibee.eu:5434)
+.TP
+.B ABRAFLEXI_LOGIN
+AbraFlexi username
+.TP
+.B ABRAFLEXI_PASSWORD
+AbraFlexi password
+.TP
+.B ABRAFLEXI_COMPANY
+AbraFlexi company code
+.TP
+.B ABRAFLEXI_GRANSY_CODE
+Code for Gransy in AbraFlexi address book (default: GRANSY)
+.TP
+.B APP_DEBUG
+Enable debug output (true/false)
+.SH EXIT STATUS
+.TP
+0
+Success
+.TP
+1
+Error during initialization
+.SH FILES
+.TP
+.I ../.env
+Default environment file
+.SH AUTHOR
+Vítězslav Dvořák <info@vitexsoftware.cz>
+.SH SEE ALSO
+.BR subreg2abraflexi (1)

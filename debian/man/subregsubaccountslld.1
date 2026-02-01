@@ -1,0 +1,74 @@
+.TH SUBREGSUBACCOUNTSLLD 1 "February 2026" "subreg2abraflexi 1.1.2" "User Commands"
+.SH NAME
+subregsubaccountslld \- Generate Zabbix LLD JSON for Subreg subaccounts
+.SH SYNOPSIS
+.B subregsubaccountslld
+[\fB\-o\fR \fIoutput\fR]
+[\fB\-e\fR \fIenvironment\fR]
+[\fB\-u\fR \fIusername\fR]
+[\fB\-\-output\fR=\fIfile\fR]
+[\fB\-\-environment\fR=\fIfile\fR]
+[\fB\-\-username\fR=\fIuser\fR]
+.SH DESCRIPTION
+.B subregsubaccountslld
+generates Zabbix Low Level Discovery (LLD) JSON data for Subreg subaccounts.
+This tool is designed for monitoring integration with Zabbix, providing
+structured data about Subreg subaccounts that can be used for automated
+discovery and monitoring of domain registrar resources.
+.PP
+The tool queries Subreg API to retrieve subaccount information and formats
+it according to Zabbix LLD JSON specification, enabling dynamic monitoring
+setup for domain registrar accounts.
+.SH OPTIONS
+.TP
+\fB\-o\fR, \fB\-\-output\fR=\fIFILE\fR
+Write output JSON data to FILE instead of stdout
+.TP
+\fB\-e\fR, \fB\-\-environment\fR=\fIFILE\fR
+Load environment variables from FILE (default: ../.env)
+.TP
+\fB\-u\fR, \fB\-\-username\fR=\fIUSER\fR
+Generate LLD data for specific username only
+.SH ENVIRONMENT
+The following environment variables are used:
+.TP
+.B SUBREG_URI
+Subreg SOAP endpoint (default: https://soap.subreg.cz/soap)
+.TP
+.B SUBREG_LOCATION
+Subreg command endpoint (default: https://soap.subreg.cz/cmd.php)
+.TP
+.B SUBREG_LOGIN
+Subreg username for API access
+.TP
+.B SUBREG_PASSWORD
+Subreg password for API access
+.TP
+.B APP_DEBUG
+Enable debug output (true/false)
+.TP
+.B RESULT_FILE
+Default output file for results
+.SH OUTPUT
+The tool outputs JSON data in Zabbix LLD format containing subaccount information
+suitable for dynamic discovery and monitoring setup.
+.SH EXIT STATUS
+.TP
+0
+Success
+.TP
+1
+Error during LLD generation
+.SH FILES
+.TP
+.I ../.env
+Default environment file
+.SH ZABBIX INTEGRATION
+This tool is specifically designed for Zabbix monitoring integration. The output
+JSON follows Zabbix LLD format and can be used directly with Zabbix discovery rules.
+.SH AUTHOR
+Vítězslav Dvořák <info@vitexsoftware.cz>
+.SH SEE ALSO
+.BR subreg2abraflexi (1),
+.BR subreg-users-report (1),
+.BR zabbix_agentd (8)
