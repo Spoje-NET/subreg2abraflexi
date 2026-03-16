@@ -41,9 +41,8 @@ class DomainCredit extends \Ease\Brick
      */
     public string $reqExtPrefix = 'subreg';
 
-
-    public function processInvoice( \AbraFlexi\FakturaVydana $invoice) {
-        
+    public function processInvoice(\AbraFlexi\FakturaVydana $invoice): void
+    {
     }
 
     /**

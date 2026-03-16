@@ -13,7 +13,6 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-
 namespace SpojeNet;
 
 \define('APP_NAME', 'Subreg2AbraFlexi');
@@ -43,7 +42,7 @@ if (\Ease\Shared::cfg('APP_DEBUG')) {
     $creditor->logBanner();
 }
 
-$report = $creditor->processInvoice( new \AbraFlexi\FakturaVydana( $invoiceCode));
+$report = $creditor->processInvoice(new \AbraFlexi\FakturaVydana($invoiceCode));
 
 $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
 $creditor->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');

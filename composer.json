@@ -3,8 +3,8 @@
     "description": "Import Subreg Pricelist into AbraFlexi",
     "type": "project",
     "require": {
-        "spojenet/subreg": "^1.2",
-        "spojenet/flexibee": "^2025.7"
+        "spojenet/subreg": "^1.4",
+        "spojenet/flexibee": "^3.7"
     },
     "license": "MIT",
     "autoload": {
