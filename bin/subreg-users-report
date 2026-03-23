@@ -1,4 +1,4 @@
 #!/bin/bash
-php -f /usr/lib/subreg2abraflexi/subreguserreport.php -- $@
+php -f /usr/share/subreg2abraflexi/subreguserreport.php -- $@
 
 
