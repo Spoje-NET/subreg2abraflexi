@@ -3,7 +3,7 @@ Source: subreg2abraflexi
 Section: unknown
 Priority: optional
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
-Build-Depends: debhelper-compat (= 13), pkg-php-tools
+Build-Depends: debhelper-compat (= 13), jq, pkg-php-tools
 Standards-Version: 4.5.1
 Homepage: https://github.com/Spoje-NET/subreg2abraflexi
 Rules-Requires-Root: no
