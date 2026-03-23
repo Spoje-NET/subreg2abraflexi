@@ -1,8 +1,14 @@
-subreg2abraflexi (1.2.0) UNRELEASED; urgency=medium
+subreg2abraflexi (1.2.1) UNRELEASED; urgency=medium
+
+  * native debian autolading used
+
+ -- vitex <info@vitexsoftware.cz>  Mon, 23 Mar 2026 23:37:04 +0100
+
+subreg2abraflexi (1.2.0) unstable; urgency=medium
 
   * subreg credential prototype package produced now
 
- -- vitex <info@vitexsoftware.cz>  Sun, 01 Feb 2026 11:44:16 +0100
+ -- vitex <info@vitexsoftware.cz>  Mon, 23 Mar 2026 23:36:48 +0100
 
 subreg2abraflexi (1.1.2) unstable; urgency=medium
 

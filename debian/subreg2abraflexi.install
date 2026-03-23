@@ -1,4 +1,3 @@
-debian/conf/composer.json       usr/lib/subreg2abraflexi/
 src/*			        usr/lib/subreg2abraflexi/
 src/SpojeNet/SubregAbraFlexi/*  usr/lib/subreg2abraflexi/SubregAbraFlexi/
 bin/*                           usr/bin/
