@@ -9,7 +9,7 @@ require_once '/usr/share/php/Subreg/autoload.php';
 // Register PSR-4 for this package (SpojeNet\SubregAbraFlexi)
 spl_autoload_register(function ($class) {
     $prefix = 'SpojeNet\\SubregAbraFlexi\\';
-    $base_dir = __DIR__ . '/SpojeNet/SubregAbraFlexi/';
+    $base_dir = __DIR__ . '/';
     if (strncmp($prefix, $class, strlen($prefix)) === 0) {
         $relative_class = substr($class, strlen($prefix));
         $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
