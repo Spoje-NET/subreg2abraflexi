@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19cd681b452717fa62a4458df3bc5dad",
+    "content-hash": "918f1c064d1b6b7a44af4b01572a3662",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -5940,9 +5940,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "phpstan/phpstan-phpunit": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},

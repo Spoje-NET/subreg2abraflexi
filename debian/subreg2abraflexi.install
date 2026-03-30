@@ -1,7 +1,7 @@
-debian/conf/composer.json       usr/lib/subreg2abraflexi/
-src/*			        usr/lib/subreg2abraflexi/
-src/SpojeNet/SubregAbraFlexi/*  usr/lib/subreg2abraflexi/SubregAbraFlexi/
 bin/*                           usr/bin/
-.env.example                    usr/share/doc/abraflexi-matcher
+src/*			        usr/share/subreg2abraflexi/
+src/SpojeNet/SubregAbraFlexi/*  usr/lib/php/subreg2abraflexi/
+debian/autoload.php		usr/lib/php/subreg2abraflexi/
+.env.example                    usr/share/doc/subreg2abraflexi
 io.github.spoje_net.subreg_to_abraflexi.metainfo.xml /usr/share/metainfo/
-subreg2abraflexi.svg            /usr/share/icons/hicolor/scalable/apps/
+subreg2abraflexi.svg            usr/share/icons/hicolor/scalable/apps/

@@ -6,14 +6,16 @@
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh $@
+	dh $@ --with phpcomposer
 
 override_dh_install:
 	dh_install
-	sed -i -e 's/..\/vendor/\/var\/lib\/composer\/subreg2abraflexi/g'   debian/subreg2abraflexi/usr/lib/subreg2abraflexi/*.php
-	sed -i -e 's/\.\.\/.env//g'  debian/subreg2abraflexi/usr/lib/subreg2abraflexi/*.php
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/conf/composer.json |sponge debian/subreg2abraflexi/usr/lib/subreg2abraflexi/composer.json
+	sed -i -e 's/..\/vendor/\/usr\/lib\/php\/subreg2abraflexi/g'    debian/subreg2abraflexi/usr/share/subreg2abraflexi/*.php
+	sed -i -e 's/\.\.\/.env//g'  					debian/subreg2abraflexi/usr/share/subreg2abraflexi/*.php
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_to_abraflexi.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_to_abraflexi.multiflexi.app.json
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_credit_check.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_credit_check.multiflexi.app.json
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_user_report.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_user_report.multiflexi.app.json
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_user_zbxlld.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_user_zbxlld.multiflexi.app.json
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//' `'"' composer.json |sponge debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/composer.json
+
+
