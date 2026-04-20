@@ -5,11 +5,18 @@
 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
+PKG_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/~.*//')
+PKG_SOURCE  := $(shell dpkg-parsechangelog -S Source)
+
 %:
 	dh $@ --with phpcomposer
 
 override_dh_install:
 	dh_install
+	sed -i "1a defined('APP_NAME') || define('APP_NAME', '$(PKG_SOURCE)');" \
+		debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/autoload.php
+	sed -i "2a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
+		debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/autoload.php
 	sed -i -e 's/..\/vendor/\/usr\/lib\/php\/subreg2abraflexi/g'    debian/subreg2abraflexi/usr/share/subreg2abraflexi/*.php
 	sed -i -e 's/\.\.\/.env//g'  					debian/subreg2abraflexi/usr/share/subreg2abraflexi/*.php
 	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  multiflexi/subreg_to_abraflexi.multiflexi.app.json |sponge debian/multiflexi-subreg2abraflexi/usr/lib/subreg2abraflexi/multiflexi/subreg_to_abraflexi.multiflexi.app.json
