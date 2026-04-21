@@ -17,6 +17,8 @@ override_dh_install:
 		debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/autoload.php
 	sed -i "s|: 'unknown'|: '$(PKG_SOURCE)'|" \\
 		debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/autoload.php
+	sed -i "s|: '0.0.0'|: '$(PKG_VERSION)'|" \\
+		debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/autoload.php
 	sed -i "2a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
 		debian/subreg2abraflexi/usr/lib/php/subreg2abraflexi/autoload.php
 	sed -i -e 's/..\/vendor/\/usr\/lib\/php\/subreg2abraflexi/g'    debian/subreg2abraflexi/usr/share/subreg2abraflexi/*.php
