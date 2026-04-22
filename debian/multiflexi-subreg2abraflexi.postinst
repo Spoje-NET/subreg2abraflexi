@@ -3,5 +3,5 @@
 set -e
 
 for file in /usr/lib/subreg2abraflexi/multiflexi/subreg_*.app.json; do
-	multiflexi-cli application import-json --file "$file"
+	multiflexi-cli application:import-json --file "$file"
 done
