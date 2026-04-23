@@ -4,6 +4,6 @@ set -e
 
 . /usr/share/debconf/confmodule
 
-multiflexi-cli crprototype delete --code subreg
+multiflexi-cli credential-prototype:delete --code subreg
 exit 0
 # End of multiflexi-subreg prerm script

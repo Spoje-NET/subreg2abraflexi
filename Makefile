@@ -37,8 +37,8 @@ drun: ## Run docker image
 
 .PHONY: multiflexi
 multiflexi: ## Apply MultiFlexi configuration
-	multiflexi-cli crprototype import-json --file multiflexi/subreg.crprototype.json
-	multiflexi-cli application import-json --file multiflexi/subreg_credit_check.multiflexi.app.json
-	multiflexi-cli application import-json --file multiflexi/subreg_to_abraflexi.multiflexi.app.json
-	multiflexi-cli application import-json --file multiflexi/subreg_user_report.multiflexi.app.json
-	multiflexi-cli application import-json --file multiflexi/subreg_user_zbxlld.multiflexi.app.json
+	multiflexi-cli credential-prototype:import-json --file multiflexi/subreg.crprototype.json
+	multiflexi-cli application:import-json --file multiflexi/subreg_credit_check.multiflexi.app.json
+	multiflexi-cli application:import-json --file multiflexi/subreg_to_abraflexi.multiflexi.app.json
+	multiflexi-cli application:import-json --file multiflexi/subreg_user_report.multiflexi.app.json
+	multiflexi-cli application:import-json --file multiflexi/subreg_user_zbxlld.multiflexi.app.json
