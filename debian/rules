@@ -5,6 +5,9 @@
 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
+# Store application version (without ~ suffix) in a variable
+APP_VERSION=$(dpkg-parsechangelog | sed -n 's/^Version: //p' | sed 's/~.*//')
+
 %:
 	dh $@ --with phpcomposer
 

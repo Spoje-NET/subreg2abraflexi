@@ -11,16 +11,32 @@ configuration
 ```env
 EASE_LOGGER=syslog|console
 
-SUBREG_LOCATION: https://soap.demoreg.net/cmd.php
-SUBREG_URI: https://soap.demoreg.net/soap
-SUBREG_LOGIN: yourlogin
-SUBREG_PASSWORD: xxxxxxx
+SUBREG_LOCATION=https://soap.demoreg.net/cmd.php
+SUBREG_URI=https://soap.demoreg.net/soap
+SUBREG_LOGIN=yourlogin
+SUBREG_PASSWORD=xxxxxxx
 
 ABRAFLEXI_URL=https://demo.flexibee.eu:5434
 ABRAFLEXI_LOGIN=winstrom
 ABRAFLEXI_PASSWORD=winstrom
 ABRAFLEXI_COMPANY=demo_de
 ABRAFLEXI_GRANSY_CODE=GRANSY
+```
+
+Testing
+-------
+
+Run the unit test suite:
+
+```shell
+composer install
+vendor/bin/phpunit
+```
+
+Run static analysis:
+
+```shell
+make static-code-analysis
 ```
 
 Run In Container

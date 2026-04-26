@@ -27,7 +27,7 @@ class DomainCredit extends \Ease\Brick
     /**
      * Name of Product/Service.
      */
-    public string $name = null;
+    public ?string $name = null;
 
     /**
      * AbraFlexi storage item Code.

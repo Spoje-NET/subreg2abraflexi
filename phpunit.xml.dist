@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <coverage>
+        <include>
+            <directory suffix=".php">src/SpojeNet</directory>
+        </include>
+    </coverage>
+    <php>
+        <env name="EASE_LOGGER" value="console"/>
+        <env name="SUBREG_LOCATION" value="https://soap.demoreg.net/cmd.php"/>
+        <env name="SUBREG_URI" value="https://soap.demoreg.net/soap"/>
+        <env name="SUBREG_LOGIN" value="testlogin"/>
+        <env name="SUBREG_PASSWORD" value="testpassword"/>
+        <env name="ABRAFLEXI_URL" value="https://demo.flexibee.eu:5434"/>
+        <env name="ABRAFLEXI_LOGIN" value="winstrom"/>
+        <env name="ABRAFLEXI_PASSWORD" value="winstrom"/>
+        <env name="ABRAFLEXI_COMPANY" value="demo_de"/>
+        <env name="ABRAFLEXI_GRANSY_CODE" value="GRANSY"/>
+    </php>
+</phpunit>

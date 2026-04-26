@@ -2,5 +2,5 @@
 # DEP-8: autopkgtest - automatic as-installed package testing
 #        Please check * https://dep-team.pages.debian.net/deps/dep8/
 #                     * /usr/share/doc/autopkgtest
-#Tests: testcode.sh
-#Restrictions: allow-stderr, breaks-testbed, needs-internet, needs-root
+Tests: testcode.sh
+Restrictions: allow-stderr, needs-internet
