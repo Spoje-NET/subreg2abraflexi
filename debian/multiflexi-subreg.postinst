@@ -4,6 +4,6 @@ set -e
 
 . /usr/share/debconf/confmodule
 
-multiflexi-cli crprototype import-json --file /usr/lib/multiflexi/crprototype/subreg.crprototype.json
+multiflexi-cli credential-prototype:import-json --file /usr/lib/multiflexi/crprototype/subreg.crprototype.json
 exit 0
 # End of multiflexi-subreg postinst script
