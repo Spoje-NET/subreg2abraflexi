@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="console-application">
   <id>io.github.spoje_net.subreg2abraflexi</id>
+  <icon type="stock">subreg2abraflexi</icon>
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
   <name>subreg2abraflexi</name>
