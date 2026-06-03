@@ -1,3 +1,9 @@
+subreg2abraflexi (1.2.2) stable; urgency=medium
+
+  * fix: catch SoapFault on SOAP connection failure in subreg2abraflexi (exit 1) and general exceptions (exit 2) instead of crashing with exit 255
+
+ -- vitex <info@vitexsoftware.cz>  Tue, 03 Jun 2026 08:10:00 +0200
+
 subreg2abraflexi (1.2.1) UNRELEASED; urgency=medium
 
   * native debian autolading used

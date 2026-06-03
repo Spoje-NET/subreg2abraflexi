@@ -35,15 +35,24 @@ $options = getopt('o::e::', ['output::environment::']);
 );
 $destination = \array_key_exists('o', $options) ? $options['o'] : (\array_key_exists('output', $options) ? $options['output'] : \Ease\Shared::cfg('RESULT_FILE', 'php://stdout'));
 $exitcode = 0;
-$syncer = new SubregAbraFlexi\SubregPricelist();
 
-if (\Ease\Shared::cfg('APP_DEBUG')) {
-    $syncer->logBanner();
+try {
+    $syncer = new SubregAbraFlexi\SubregPricelist();
+
+    if (\Ease\Shared::cfg('APP_DEBUG')) {
+        $syncer->logBanner();
+    }
+
+    $report = $syncer->import();
+
+    $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
+    $syncer->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
+} catch (\SoapFault $exc) {
+    fwrite(\STDERR, 'SOAP connection error: '.$exc->getMessage().\PHP_EOL);
+    $exitcode = 1;
+} catch (\Exception $exc) {
+    fwrite(\STDERR, $exc->getMessage().\PHP_EOL);
+    $exitcode = 2;
 }
-
-$report = $syncer->import();
-
-$written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
-$syncer->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
 
 exit($exitcode);
