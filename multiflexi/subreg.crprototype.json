@@ -42,5 +42,12 @@
       "default_value": "https://soap.subreg.cz/cmd.php",
       "required": true
     }
+  ],
+  "homepage": "https://www.subreg.cz/",
+  "tags": [
+    "Subreg",
+    "domain",
+    "registrar",
+    "DNS"
   ]
 }
