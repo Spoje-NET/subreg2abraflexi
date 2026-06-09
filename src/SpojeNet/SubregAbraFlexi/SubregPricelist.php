@@ -49,23 +49,29 @@ class SubregPricelist extends \AbraFlexi\Cenik
         foreach ($domainsToProcess as $domain => $domainInfo) {
             $synced = false;
 
-            if (\array_key_exists('prices', $domainInfo)) {
-                $domainInfo['name'] = $domain;
-                $prices = $domainInfo['prices'];
+            if (!\array_key_exists('prices', $domainInfo)) {
+                $this->addStatusMessage($domain.': '._('No prices provided ?!?'), 'warning');
+                $report['fail'][$domain] = $domainInfo;
 
+                continue;
+            }
+
+            $domainInfo['name'] = $domain;
+            $prices = $domainInfo['prices'];
+
+            // A single domain must never abort the whole pricelist import:
+            // AbraFlexi may answer with a transient 5xx for one record.
+            try {
                 if ((\array_key_exists('register', $prices) && \array_key_exists('renew', $prices)) && ($prices['register'] === $prices['renew'])) {
                     $synced = $this->saveDomain('common', $domainInfo);
                 } else {
+                    $synced = true;
+
                     foreach ($prices as $priceType => $priceValue) {
                         switch ($priceType) {
                             case 'renew':
                             case 'register':
-                                try {
-                                    $synced = $this->saveDomain($priceType, $domainInfo);
-                                } catch (\AbraFlexi\Exception $exc) {
-                                    echo $exc->getTraceAsString();
-                                    $this->addStatusMessage('Error importing domain: '.$domain, 'error');
-                                }
+                                $synced = $this->saveDomain($priceType, $domainInfo) && $synced;
 
                                 break;
                             case 'ea1':
@@ -94,11 +100,12 @@ class SubregPricelist extends \AbraFlexi\Cenik
                         }
                     }
                 }
-
-                $this->addStatusMessage($domain.': '.(++$position).'/'.\count($domainsToProcess).' '.$this->getRecordCode(), $synced ? 'success' : 'error');
-            } else {
-                $this->addStatusMessage($domain.': '._('No prices provided ?!?'), 'warning');
+            } catch (\AbraFlexi\Exception $exc) {
+                $synced = false;
+                $this->addStatusMessage('Error importing domain '.$domain.': '.$exc->getMessage(), 'error');
             }
+
+            $this->addStatusMessage($domain.': '.(++$position).'/'.\count($domainsToProcess).' '.$this->getRecordCode(), $synced ? 'success' : 'error');
 
             $report[$synced ? 'success' : 'fail'][$domain] = $domainInfo;
         }
