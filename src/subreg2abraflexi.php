@@ -47,6 +47,11 @@ try {
 
     $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
     $syncer->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
+
+    if (!empty($report['fail'])) {
+        fwrite(\STDERR, sprintf('%d of %d domains failed to import'.\PHP_EOL, \count($report['fail']), $report['domains']));
+        $exitcode = 2;
+    }
 } catch (\SoapFault $exc) {
     fwrite(\STDERR, 'SOAP connection error: '.$exc->getMessage().\PHP_EOL);
     $exitcode = 1;
