@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
-  "schemaVersion": "3.2.1",
+  "schemaVersion": "3.4.0",
   "uuid": "5a37f926-2b26-44ff-ba02-25ac817eb005",
   "name": {
     "en": "Subreg to AbraFlexi",
@@ -22,6 +22,13 @@
   "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
   "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
   "executable": "subreg2abraflexi",
+  "events": {
+    "emits": {
+      "document.imported": {
+        "description": "A document was imported into the accounting system"
+      }
+    }
+  },
   "environment": {
     "ABRAFLEXI_COMPANY": {
       "type": "string",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
-  "schemaVersion": "3.2.1",
+  "schemaVersion": "3.4.0",
   "uuid": "ca0f8b32-836b-421f-80a5-8e382951dcfa",
   "name": {
     "en": "Subreg credit Check",
@@ -23,6 +23,13 @@
   "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
   "ociimage": "docker.io/vitexsoftware/subreg2abraflexi",
   "executable": "subreg-check-credit",
+  "events": {
+    "emits": {
+      "credit.checked": {
+        "description": "Customer credit was checked"
+      }
+    }
+  },
   "environment": {
     "ABRAFLEXI_COMPANY": {
       "type": "string",

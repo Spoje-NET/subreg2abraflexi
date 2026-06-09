@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
-  "schemaVersion": "3.2.1",
+  "schemaVersion": "3.4.0",
   "uuid": "804ca7c8-d81e-4d62-9999-1ddcd425b247",
   "name": {
     "en": "Subreg Users LLD for Zabbix",
@@ -23,6 +23,13 @@
   ],
   "homepage": "https://github.com/Spoje-NET/subreg2abraflexi/",
   "executable": "subregsubaccountslld",
+  "events": {
+    "emits": {
+      "metrics.collected": {
+        "description": "Monitoring metrics were collected"
+      }
+    }
+  },
   "environment": {
     "SUBREG_LOCATION": {
       "type": "string",
