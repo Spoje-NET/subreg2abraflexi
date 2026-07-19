@@ -1,3 +1,9 @@
+subreg2abraflexi (1.2.3) stable; urgency=medium
+
+  * fix: install subreg-users.conf Zabbix UserParameter in multiflexi-subreg2abraflexi to resolve Unknown metric multiflexi.clients.subreg.lld on Zabbix agents
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Fri, 19 Jun 2026 07:04:47 +0200
+
 subreg2abraflexi (1.2.2) stable; urgency=medium
 
   * fix: catch SoapFault on SOAP connection failure in subreg2abraflexi (exit 1) and general exceptions (exit 2) instead of crashing with exit 255
