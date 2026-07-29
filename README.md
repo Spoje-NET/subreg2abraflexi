@@ -1,6 +1,8 @@
 # subreg2abraflexi
 
 ![Project Logo](subreg2abraflexi.svg?raw=true)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 * Import Subreg Pricelist into AbraFlexi
 * Check Subreg Credit for Customers in AbraFlexi
