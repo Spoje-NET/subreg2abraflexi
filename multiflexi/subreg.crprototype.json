@@ -5,7 +5,7 @@
   "name": "Subreg API Credentials",
   "description": "Configuration for connecting to Subreg domain registrar API services",
   "version": "1.0.0",
-  "logo": "subreg-logo.png",
+  "logo": "subreg-logo.svg",
   "url": "https://www.subreg.cz/",
   "fields": [
     {
