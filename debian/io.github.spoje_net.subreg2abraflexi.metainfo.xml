@@ -6,9 +6,13 @@
   <project_license>MIT</project_license>
   <name>subreg2abraflexi</name>
   <summary>Import Subreg Pricelist into AbraFlexi </summary>
+  <summary xml:lang="cs">Import ceníku Subreg do AbraFlexi</summary>
   <description>
     <p>
       Application Definition for MultiFlexi
+    </p>
+    <p xml:lang="cs">
+      Definice aplikace pro MultiFlexi
     </p>
   </description>
   <categories>

@@ -4,13 +4,17 @@
   
   <name>Subreg to AbraFlexi</name>
   <summary>Import Subreg Pricelist into AbraFlexi</summary>
-  
+  <summary xml:lang="cs">Import ceníku Subreg do AbraFlexi</summary>
+
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
-  
+
   <description>
     <p>
       Import Subreg provided domain prices into AbraFlexi pricelist
+    </p>
+    <p xml:lang="cs">
+      Importuje ceny domén poskytnuté Subregem do ceníku v AbraFlexi
     </p>
   </description>
   
