@@ -1,4 +1,4 @@
-# WARP.md - Working AI Reference for subreg2abraflexi
+# AGENTS.md - Working AI Reference for subreg2abraflexi
 
 ## Project Overview
 **Type**: PHP Project/Debian Package
