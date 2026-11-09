@@ -45,15 +45,24 @@ if (\Ease\Shared::cfg('APP_DEBUG')) {
 
 $subreg = new \Subreg\Client();
 
-$report = [];
+$credits = [];
 
 foreach ($customers->getCustomers() as $flexiCode => $subregId) {
     $customerInfo = $subreg->infoUser($subregId);
-    $report[$flexiCode] = [
+    $credits[$flexiCode] = [
         'subreg_id' => $subregId,
         'subreg_credit' => $customerInfo['credit'],
     ];
 }
+
+$report = SubregAbraFlexi\Report::build(
+    'subreg-credit-check',
+    SubregAbraFlexi\Report::STATUS_SUCCESS,
+    sprintf('Credit of %d customers checked', \count($credits)),
+    ['customers' => \count($credits)],
+    [],
+    $credits,
+);
 
 $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
 $customers->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');

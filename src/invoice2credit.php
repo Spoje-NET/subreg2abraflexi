@@ -42,7 +42,15 @@ if (\Ease\Shared::cfg('APP_DEBUG')) {
     $creditor->logBanner();
 }
 
-$report = $creditor->processInvoice(new \AbraFlexi\FakturaVydana($invoiceCode));
+$creditor->processInvoice(new \AbraFlexi\FakturaVydana($invoiceCode));
+$report = SubregAbraFlexi\Report::build(
+    'invoice2credit',
+    SubregAbraFlexi\Report::STATUS_SUCCESS,
+    sprintf('Invoice %s processed', $invoiceCode),
+    [],
+    [],
+    ['invoice' => $invoiceCode],
+);
 
 $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
 $creditor->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');

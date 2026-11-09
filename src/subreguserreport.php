@@ -41,7 +41,8 @@ try {
         $subreg->logBanner();
     }
 
-    $report = [];
+    $users = [];
+    $message = '';
 
     $userListData = $subreg->Users_List();
 
@@ -49,18 +50,27 @@ try {
         foreach ($userListData['users'] as $subregUserData) {
             if ($username) {
                 if ($username === $subregUserData['username']) {
-                    $report = $subregUserData;
+                    $users = [$subregUserData];
                 }
             } else {
-                $report[] = $subregUserData;
+                $users[] = $subregUserData;
             }
         }
     }
 } catch (\Exception $exc) {
     $subreg = new \Subreg\Client(['autologin' => false, 'uri' => \Ease\Shared::cfg('SUBREG_URI'), 'location' => \Ease\Shared::cfg('SUBREG_LOCATION')]);
     $exitcode = $exc->getCode();
-    $report['message'] = $exc->getMessage();
+    $message = $exc->getMessage();
 }
+
+$report = SubregAbraFlexi\Report::build(
+    'subreg-users-report',
+    $exitcode ? SubregAbraFlexi\Report::STATUS_ERROR : SubregAbraFlexi\Report::STATUS_SUCCESS,
+    $message,
+    ['users' => \count($users)],
+    [],
+    ['users' => $users],
+);
 
 $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
 $subreg->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');

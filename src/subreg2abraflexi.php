@@ -43,7 +43,16 @@ try {
         $syncer->logBanner();
     }
 
-    $report = $syncer->import();
+    $import = $syncer->import();
+    $failed = \count($import['fail'] ?? []);
+    $report = SubregAbraFlexi\Report::build(
+        'subreg2abraflexi',
+        $failed ? SubregAbraFlexi\Report::STATUS_WARNING : SubregAbraFlexi\Report::STATUS_SUCCESS,
+        $failed ? sprintf('%d of %d domains failed to import', $failed, $import['domains']) : sprintf('%d domains imported', $import['domains']),
+        ['domains' => $import['domains'], 'failed' => $failed],
+        [],
+        $import,
+    );
 
     $written = file_put_contents($destination, json_encode($report, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0));
     $syncer->addStatusMessage(sprintf(_('Saving result to %s'), $destination), $written ? 'success' : 'error');
@@ -55,9 +64,11 @@ try {
 } catch (\SoapFault $exc) {
     fwrite(\STDERR, 'SOAP connection error: '.$exc->getMessage().\PHP_EOL);
     $exitcode = 1;
+    file_put_contents($destination, json_encode(SubregAbraFlexi\Report::build('subreg2abraflexi', SubregAbraFlexi\Report::STATUS_ERROR, 'SOAP connection error: '.$exc->getMessage())));
 } catch (\Exception $exc) {
     fwrite(\STDERR, $exc->getMessage().\PHP_EOL);
     $exitcode = 2;
+    file_put_contents($destination, json_encode(SubregAbraFlexi\Report::build('subreg2abraflexi', SubregAbraFlexi\Report::STATUS_ERROR, $exc->getMessage())));
 }
 
 exit($exitcode);
