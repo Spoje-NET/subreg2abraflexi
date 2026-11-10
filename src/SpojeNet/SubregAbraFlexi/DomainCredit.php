@@ -88,7 +88,7 @@ class DomainCredit extends \Ease\Brick
                         $subregLogin.'/'.\AbraFlexi\RO::uncode($invoice->getDataValue('firma')),
                         $invoice->getRecordIdent(),
                     ),
-                    ($this->subreger()->lastResult === 'ok') ? 'success' : 'error',
+                    ($this->subreger()->lastStatus === 'ok') ? 'success' : 'warning',
                 );
                 $finalCredit = $this->abraFlexiAddressToSubregCredit($invoice->getDataValue('firma'));
 
